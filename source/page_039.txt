@@ -1,0 +1,36 @@
+Springer Nature 2021 LATEX template
+Explainable Contextual Anomaly Detection 39
+Salvador S, Chan P, Brodie J (2004) Learning states and rules for time series
+anomaly detection. In: FLAIRS conference, pp 306–311
+Scutari M, Scutari MM, MMPC HP (2019) Package ‘bnlearn’. Bayesian net-
+work structure learning, parameter learning and inference, R package version
+4(1)
+Segal M, Xiao Y (2011) Multivariate random forests. Wiley interdisciplinary
+reviews: Data mining and knowledge discovery 1(1):80–87
+Seger C (2018) An investigation of categorical variable encoding techniques in
+machine learning: binary versus one-hot and feature hashing
+Smets K, Verdonk B, Jordaan EM (2009) Discovering novelty in spatio/tem-
+poral data using one-class support vector machines. In: 2009 International
+Joint Conference on Neural Networks, IEEE, pp 2956–2963
+Song X, Wu M, Jermaine C, et al (2007) Conditional anomaly detection. IEEE
+Transactions on knowledge and Data Engineering 19(5):631–645
+Spinosa EJ, Carvalho A (2005) Support vector machines for novel class
+detection in bioinformatics. Genet Mol Res 4(3):608–15
+Tang G, Pei J, Bailey J, et al (2015) Mining multidimensional contex-
+tual outliers from categorical relational data. Intelligent Data Analysis
+19(5):1171–1192
+Teng CM (1999) Correcting noisy data. In: ICML, Citeseer, pp 239–248
+Valko M, Kveton B, Valizadegan H, et al (2011) Conditional anomaly detection
+with soft harmonic functions. In: 2011 IEEE 11th International Conference
+on Data Mining, IEEE, pp 735–743
+Wang H, Bah MJ, Hammad M (2019) Progress in outlier detection techniques:
+A survey. Ieee Access 7:107,964–108,000
+Wong WK, Moore A W, Cooper GF, et al (2003) Bayesian network anomaly
+pattern detection for disease outbreaks. In: Proceedings of the 20th Inter-
+national Conference on Machine Learning (ICML-03), pp 808–815
+Xu H, Wang Y, Jian S, et al (2021) Beyond outlier detection: Outlier inter-
+pretation by attention-guided triplet deviation network. In: Proceedings of
+the Web Conference 2021, pp 1328–1339
+Yaramakala S, Margaritis D (2005) Speculative markov blanket discovery for
+optimal feature selection. In: Fifth IEEE International Conference on Data
+Mining (ICDM’05), IEEE, pp 4–pp

@@ -1,0 +1,329 @@
+\begin{thebibliography}{66}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{{#1}}
+\providecommand{\urlprefix}{URL }
+\providecommand{\doi}[1]{\url{https://doi.org/#1}}
+\providecommand{\eprint}[2][]{\url{#2}}
+ \bibcommenthead
+
+\bibitem[{Aggarwal and Sathe(2017)}]{aggarwal2017outlier}
+Aggarwal CC, Sathe S (2017) Outlier ensembles: An introduction. Springer
+
+\bibitem[{Ahmad et~al(2017)Ahmad, Munir, Bhatti, Aftab, and
+  Raza}]{ahmad2017survival}
+Ahmad T, Munir A, Bhatti SH, et~al (2017) Survival analysis of heart failure
+  patients: A case study. PloS one 12(7):e0181,001
+
+\bibitem[{Ahmed et~al(2016{\natexlab{a}})Ahmed, Mahmood, and
+  Hu}]{ahmed2016survey1}
+Ahmed M, Mahmood AN, Hu J (2016{\natexlab{a}}) A survey of network anomaly
+  detection techniques. Journal of Network and Computer Applications 60:19--31
+
+\bibitem[{Ahmed et~al(2016{\natexlab{b}})Ahmed, Mahmood, and
+  Islam}]{ahmed2016survey2}
+Ahmed M, Mahmood AN, Islam MR (2016{\natexlab{b}}) A survey of anomaly
+  detection techniques in financial domain. Future Generation Computer Systems
+  55:278--288
+
+\bibitem[{Angiulli and Pizzuti(2002)}]{angiulli2002fast}
+Angiulli F, Pizzuti C (2002) Fast outlier detection in high dimensional spaces.
+  In: European conference on principles of data mining and knowledge discovery,
+  Springer, pp 15--27
+
+\bibitem[{Babbar and Chawla(2012)}]{babbar2012mining}
+Babbar S, Chawla S (2012) Mining causal outliers using gaussian bayesian
+  networks. In: 2012 IEEE 24th International Conference on Tools with
+  Artificial Intelligence, IEEE, pp 97--104
+
+\bibitem[{Breiman(2001)}]{breiman2001random}
+Breiman L (2001) Random forests. Machine learning 45:5--32
+
+\bibitem[{Breiman et~al(2017)Breiman, Friedman, Olshen, and
+  Stone}]{breiman2017classification}
+Breiman L, Friedman JH, Olshen RA, et~al (2017) Classification and regression
+  trees. Routledge
+
+\bibitem[{Breunig et~al(2000)Breunig, Kriegel, Ng, and Sander}]{breunig2000lof}
+Breunig MM, Kriegel HP, Ng RT, et~al (2000) Lof: identifying density-based
+  local outliers. In: Proceedings of the 2000 ACM SIGMOD international
+  conference on Management of data, pp 93--104
+
+\bibitem[{Buczak and Guven(2015)}]{buczak2015survey}
+Buczak AL, Guven E (2015) A survey of data mining and machine learning methods
+  for cyber security intrusion detection. IEEE Communications surveys \&
+  tutorials 18(2):1153--1176
+
+\bibitem[{Cabero et~al(2021)Cabero, Epifanio, Pi{\'e}rola, and
+  Ballester}]{cabero2021archetype}
+Cabero I, Epifanio I, Pi{\'e}rola A, et~al (2021) Archetype analysis: A new
+  subspace outlier detection approach. Knowledge-Based Systems 217:106,830
+
+\bibitem[{Cai et~al(2013)Cai, He, and Man}]{cai2013spatial}
+Cai Q, He H, Man H (2013) Spatial outlier detection based on iterative
+  self-organizing learning model. Neurocomputing 117:161--172
+
+\bibitem[{Calikus et~al(2021)Calikus, Nowaczyk, Bouguelia, and
+  Dikmen}]{calikus2021wisdom}
+Calikus E, Nowaczyk S, Bouguelia MR, et~al (2021) Wisdom of the contexts:
+  Active ensemble learning for contextual anomaly detection. arXiv preprint
+  arXiv:210111560
+
+\bibitem[{Campos et~al(2016)Campos, Zimek, Sander, Campello, Micenkov{\'a},
+  Schubert, Assent, and Houle}]{campos2016evaluation}
+Campos GO, Zimek A, Sander J, et~al (2016) On the evaluation of unsupervised
+  outlier detection: measures, datasets, and an empirical study. Data mining
+  and knowledge discovery 30(4):891--927
+
+\bibitem[{Chandola et~al(2009)Chandola, Banerjee, and
+  Kumar}]{chandola2009anomaly}
+Chandola V, Banerjee A, Kumar V (2009) Anomaly detection: A survey. ACM
+  computing surveys (CSUR) 41(3):1--58
+
+\bibitem[{F{\"a}rber et~al(2010)F{\"a}rber, G{\"u}nnemann, Kriegel, Kr{\"o}ger,
+  M{\"u}ller, Schubert, Seidl, and Zimek}]{farber2010using}
+F{\"a}rber I, G{\"u}nnemann S, Kriegel HP, et~al (2010) On using class-labels
+  in evaluation of clusterings. In: MultiClust: 1st international workshop on
+  discovering, summarizing and using multiple clusterings held in conjunction
+  with KDD, p~1
+
+\bibitem[{Fokkema et~al(2022)Fokkema, de~Heide, and van
+  Erven}]{fokkema2022attribution}
+Fokkema H, de~Heide R, van Erven T (2022) Attribution-based explanations that
+  provide recourse cannot be robust. arXiv preprint arXiv:220515834
+
+\bibitem[{Friedman(1937)}]{friedman1937use}
+Friedman M (1937) The use of ranks to avoid the assumption of normality
+  implicit in the analysis of variance. Journal of the american statistical
+  association 32(200):675--701
+
+\bibitem[{Goldstein and Dengel(2012)}]{goldstein2012histogram}
+Goldstein M, Dengel A (2012) Histogram-based outlier score (hbos): A fast
+  unsupervised anomaly detection algorithm. KI-2012: Poster and Demo Track pp
+  59--63
+
+\bibitem[{Gower(1971)}]{gower1971general}
+Gower JC (1971) A general coefficient of similarity and some of its properties.
+  Biometrics pp 857--871
+
+\bibitem[{Harrison~Jr and Rubinfeld(1978)}]{harrison1978hedonic}
+Harrison~Jr D, Rubinfeld DL (1978) Hedonic housing prices and the demand for
+  clean air. Journal of environmental economics and management 5(1):81--102
+
+\bibitem[{Hawkins(1980)}]{hawkins1980identification}
+Hawkins DM (1980) Identification of outliers, vol~11. Springer
+
+\bibitem[{Hayes and Capretz(2014)}]{hayes2014contextual}
+Hayes MA, Capretz MA (2014) Contextual anomaly detection in big sensor data.
+  In: 2014 IEEE International Congress on Big Data, IEEE, pp 64--71
+
+\bibitem[{Hong and Hauskrecht(2015)}]{hong2015multivariate}
+Hong C, Hauskrecht M (2015) Multivariate conditional anomaly detection and its
+  clinical application. In: Proceedings of the AAAI Conference on Artificial
+  Intelligence
+
+\bibitem[{Huang et~al(2003)Huang, Fan, Lee, and Yu}]{huang2003cross}
+Huang Ya, Fan W, Lee W, et~al (2003) Cross-feature analysis for detecting
+  ad-hoc routing anomalies. In: 23rd International Conference on Distributed
+  Computing Systems, 2003. Proceedings., IEEE, pp 478--487
+
+\bibitem[{Hwang et~al(2009)Hwang, Kim, Kim, and Seah}]{hwang2009survey}
+Hwang I, Kim S, Kim Y, et~al (2009) A survey of fault detection, isolation, and
+  reconfiguration methods. IEEE transactions on control systems technology
+  18(3):636--653
+
+\bibitem[{Kampstra(2008)}]{kampstra2008beanplot}
+Kampstra P (2008) Beanplot: A boxplot alternative for visual comparison of
+  distributions. Journal of statistical software 28(1):1--9
+
+\bibitem[{Kandanaarachchi et~al(2020)Kandanaarachchi, Mu{\~n}oz, Hyndman, and
+  Smith-Miles}]{kandanaarachchi2020normalization}
+Kandanaarachchi S, Mu{\~n}oz MA, Hyndman RJ, et~al (2020) On normalization and
+  algorithm selection for unsupervised outlier detection. Data Mining and
+  Knowledge Discovery 34(2):309--354
+
+\bibitem[{Koenker and Hallock(2001)}]{koenker2001quantile}
+Koenker R, Hallock KF (2001) Quantile regression. Journal of economic
+  perspectives 15(4):143--156
+
+\bibitem[{Kriegel et~al(2009)Kriegel, Kr{\"o}ger, Schubert, and
+  Zimek}]{kriegel2009outlier}
+Kriegel HP, Kr{\"o}ger P, Schubert E, et~al (2009) Outlier detection in
+  axis-parallel subspaces of high dimensional data. In: Pacific-asia conference
+  on knowledge discovery and data mining, Springer, pp 831--838
+
+\bibitem[{Kriegel et~al(2012)Kriegel, Kr{\"o}ger, Schubert, and
+  Zimek}]{kriegel2012outlier}
+Kriegel HP, Kr{\"o}ger P, Schubert E, et~al (2012) Outlier detection in
+  arbitrarily oriented subspaces. In: 2012 IEEE 12th international conference
+  on data mining, IEEE, pp 379--388
+
+\bibitem[{Kuo et~al(2018)Kuo, Li, and Kifer}]{kuo2018detecting}
+Kuo YH, Li Z, Kifer D (2018) Detecting outliers in data with correlated
+  measures. In: Proceedings of the 27th ACM International Conference on
+  Information and Knowledge Management, pp 287--296
+
+\bibitem[{Lei et~al(2018)Lei, G’Sell, Rinaldo, Tibshirani, and
+  Wasserman}]{lei2018distribution}
+Lei J, G’Sell M, Rinaldo A, et~al (2018) Distribution-free predictive
+  inference for regression. Journal of the American Statistical Association
+  113(523):1094--1111
+
+\bibitem[{Li et~al(2022)Li, Zhu, and van Leeuwen}]{li2022survey}
+Li Z, Zhu Y, van Leeuwen M (2022) A survey on explainable anomaly detection.
+  arXiv preprint arXiv:221006959
+
+\bibitem[{Liang and Parthasarathy(2016)}]{liang2016robust}
+Liang J, Parthasarathy S (2016) Robust contextual outlier detection: Where
+  context meets sparsity. In: Proceedings of the 25th ACM International on
+  Conference on Information and Knowledge Management, pp 2167--2172
+
+\bibitem[{Liu et~al(2008)Liu, Ting, and Zhou}]{liu2008isolation}
+Liu FT, Ting KM, Zhou ZH (2008) Isolation forest. In: 2008 eighth ieee
+  international conference on data mining, IEEE, pp 413--422
+
+\bibitem[{Liu et~al(2018)Liu, Shin, and Hu}]{liu2018contextual}
+Liu N, Shin D, Hu X (2018) Contextual outlier interpretation. In: Proceedings
+  of the 27th International Joint Conference on Artificial Intelligence, pp
+  2461--2467
+
+\bibitem[{Lu et~al(2020{\natexlab{a}})Lu, Liu, Li, Le, and
+  Liu}]{lu2020dependency}
+Lu S, Liu L, Li J, et~al (2020{\natexlab{a}}) Dependency-based anomaly
+  detection: Framework, methods and benchmark. arXiv preprint arXiv:201106716
+
+\bibitem[{Lu et~al(2020{\natexlab{b}})Lu, Liu, Li, Le, and Liu}]{lu2020lopad}
+Lu S, Liu L, Li J, et~al (2020{\natexlab{b}}) Lopad: A local prediction
+  approach to anomaly detection. Advances in Knowledge Discovery and Data
+  Mining 12085:660
+
+\bibitem[{Lundberg and Lee(2017)}]{lundberg2017unified}
+Lundberg SM, Lee SI (2017) A unified approach to interpreting model
+  predictions. Advances in neural information processing systems 30
+
+\bibitem[{Meghanath et~al(2018)Meghanath, Pai, and
+  Akoglu}]{meghanath2018conout}
+Meghanath M, Pai D, Akoglu L (2018) Conout: Con textual outlier detection with
+  multiple contexts: Application to ad fraud. In: Joint European Conference on
+  Machine Learning and Knowledge Discovery in Databases, Springer, pp 139--156
+
+\bibitem[{Meinshausen(2006)}]{meinshausen2006quantile}
+Meinshausen N (2006) Quantile regression forests. Journal of Machine Learning
+  Research 7(6):983--999
+
+\bibitem[{Micenkov{\'a} et~al(2014)Micenkov{\'a}, McWilliams, and
+  Assent}]{micenkova2014learning}
+Micenkov{\'a} B, McWilliams B, Assent I (2014) Learning outlier ensembles: The
+  best of both worlds--supervised and unsupervised. In: Proceedings of the ACM
+  SIGKDD 2014 Workshop on Outlier Detection and Description under Data
+  Diversity (ODD2). New York, NY, USA, Citeseer, pp 51--54
+
+\bibitem[{Micenkov{\'a} et~al(2015)Micenkov{\'a}, McWilliams, and
+  Assent}]{micenkova2015learning}
+Micenkov{\'a} B, McWilliams B, Assent I (2015) Learning representations for
+  outlier detection on a budget. arXiv preprint arXiv:150708104
+
+\bibitem[{Nemenyi(1963)}]{nemenyi1963distribution}
+Nemenyi PB (1963) Distribution-free multiple comparisons. Princeton University
+
+\bibitem[{Nguyen et~al(2013)Nguyen, M{\"u}ller, Vreeken, Keller, and
+  B{\"o}hm}]{nguyen2013cmi}
+Nguyen HV, M{\"u}ller E, Vreeken J, et~al (2013) Cmi: An information-theoretic
+  contrast measure for enhancing subspace cluster and outlier detection. In:
+  Proceedings of the 2013 SIAM International Conference on Data Mining, SIAM,
+  pp 198--206
+
+\bibitem[{Noto et~al(2010)Noto, Brodley, and Slonim}]{noto2010anomaly}
+Noto K, Brodley C, Slonim D (2010) Anomaly detection using an ensemble of
+  feature models. In: 2010 ieee international conference on data mining, IEEE,
+  pp 953--958
+
+\bibitem[{Pang et~al(2021)Pang, Shen, Cao, and Hengel}]{pang2021deep}
+Pang G, Shen C, Cao L, et~al (2021) Deep learning for anomaly detection: A
+  review. ACM Computing Surveys (CSUR) 54(2):1--38
+
+\bibitem[{Panjei et~al(2022)Panjei, Gruenwald, Leal, Nguyen, and
+  Silvia}]{panjei2022survey}
+Panjei E, Gruenwald L, Leal E, et~al (2022) A survey on outlier explanations.
+  The VLDB Journal 31(5):977--1008
+
+\bibitem[{Pasillas-D{\'\i}az and Ratt{\'e}(2016)}]{pasillas2016unsupervised}
+Pasillas-D{\'\i}az JR, Ratt{\'e} S (2016) An unsupervised approach for
+  combining scores of outlier detection techniques, based on similarity
+  measures. Electronic notes in theoretical computer science 329:61--77
+
+\bibitem[{Salvador et~al(2004)Salvador, Chan, and
+  Brodie}]{salvador2004learning}
+Salvador S, Chan P, Brodie J (2004) Learning states and rules for time series
+  anomaly detection. In: FLAIRS conference, pp 306--311
+
+\bibitem[{Scutari et~al(2019)Scutari, Scutari, and MMPC}]{scutari2019package}
+Scutari M, Scutari MM, MMPC HP (2019) Package ‘bnlearn’. Bayesian network
+  structure learning, parameter learning and inference, R package version 4(1)
+
+\bibitem[{Segal and Xiao(2011)}]{segal2011multivariate}
+Segal M, Xiao Y (2011) Multivariate random forests. Wiley interdisciplinary
+  reviews: Data mining and knowledge discovery 1(1):80--87
+
+\bibitem[{Seger(2018)}]{seger2018investigation}
+Seger C (2018) An investigation of categorical variable encoding techniques in
+  machine learning: binary versus one-hot and feature hashing
+
+\bibitem[{Smets et~al(2009)Smets, Verdonk, and Jordaan}]{smets2009discovering}
+Smets K, Verdonk B, Jordaan EM (2009) Discovering novelty in spatio/temporal
+  data using one-class support vector machines. In: 2009 International Joint
+  Conference on Neural Networks, IEEE, pp 2956--2963
+
+\bibitem[{Song et~al(2007)Song, Wu, Jermaine, and Ranka}]{song2007conditional}
+Song X, Wu M, Jermaine C, et~al (2007) Conditional anomaly detection. IEEE
+  Transactions on knowledge and Data Engineering 19(5):631--645
+
+\bibitem[{Spinosa and Carvalho(2005)}]{spinosa2005support}
+Spinosa EJ, Carvalho A (2005) Support vector machines for novel class detection
+  in bioinformatics. Genet Mol Res 4(3):608--15
+
+\bibitem[{Tang et~al(2015)Tang, Pei, Bailey, and Dong}]{tang2015mining}
+Tang G, Pei J, Bailey J, et~al (2015) Mining multidimensional contextual
+  outliers from categorical relational data. Intelligent Data Analysis
+  19(5):1171--1192
+
+\bibitem[{Teng(1999)}]{teng1999correcting}
+Teng CM (1999) Correcting noisy data. In: ICML, Citeseer, pp 239--248
+
+\bibitem[{Valko et~al(2011)Valko, Kveton, Valizadegan, Cooper, and
+  Hauskrecht}]{valko2011conditional}
+Valko M, Kveton B, Valizadegan H, et~al (2011) Conditional anomaly detection
+  with soft harmonic functions. In: 2011 IEEE 11th International Conference on
+  Data Mining, IEEE, pp 735--743
+
+\bibitem[{Wang et~al(2019)Wang, Bah, and Hammad}]{wang2019progress}
+Wang H, Bah MJ, Hammad M (2019) Progress in outlier detection techniques: A
+  survey. Ieee Access 7:107,964--108,000
+
+\bibitem[{Wong et~al(2003)Wong, Moore, Cooper, and Wagner}]{wong2003bayesian}
+Wong WK, Moore AW, Cooper GF, et~al (2003) Bayesian network anomaly pattern
+  detection for disease outbreaks. In: Proceedings of the 20th International
+  Conference on Machine Learning (ICML-03), pp 808--815
+
+\bibitem[{Xu et~al(2021)Xu, Wang, Jian, Huang, Wang, Liu, and
+  Li}]{xu2021beyond}
+Xu H, Wang Y, Jian S, et~al (2021) Beyond outlier detection: Outlier
+  interpretation by attention-guided triplet deviation network. In: Proceedings
+  of the Web Conference 2021, pp 1328--1339
+
+\bibitem[{Yaramakala and Margaritis(2005)}]{yaramakala2005speculative}
+Yaramakala S, Margaritis D (2005) Speculative markov blanket discovery for
+  optimal feature selection. In: Fifth IEEE International Conference on Data
+  Mining (ICDM'05), IEEE, pp 4--pp
+
+\bibitem[{Zhao et~al(2019)Zhao, Nasrullah, and Li}]{zhao2019pyod}
+Zhao Y, Nasrullah Z, Li Z (2019) Pyod: A python toolbox for scalable outlier
+  detection. Journal of Machine Learning Research 20:1--7
+
+\bibitem[{Zheng et~al(2017)Zheng, Brantley, Lauvaux, and
+  Li}]{zheng2017contextual}
+Zheng G, Brantley SL, Lauvaux T, et~al (2017) Contextual spatial outlier
+  detection with metric learning. In: Proceedings of the 23rd ACM SIGKDD
+  International Conference on Knowledge Discovery and Data Mining, pp
+  2161--2170
+
+\end{thebibliography}

@@ -1,0 +1,47 @@
+Springer Nature 2021 LATEX template
+6 Explainable Contextual Anomaly Detection
+define contexts. These methods are not directly applicable to other domains,
+where the contexts are defined by other types of features; ‘generic’ contextual
+anomaly detection has received limited attention in the community.
+CAD (Song et al, 2007) is a seminal work that introduced generic contex-
+tual anomaly detection. It assumes a user-specified partition of features into
+contextual (called ‘environmental’) and behavioral (called ‘indicator’) features,
+and uses Gaussian Mixture Models to fit the distributions of the contextual
+and behavioral feature spaces. Dependencies between contextual features and
+behavioral features are then learned by means of ‘mapping functions’, and an
+object is considered anomalous if it violates the learned functions. For this to
+work CAD assumes that both the contextual and behavioral features consist of
+an unknown number of multiple Gaussian components, which may be a strong
+assumption in practice. Further, CAD can only handle numerical features and
+is computationally very expensive. Our proposed method makes no assump-
+tions about the distribution of the features, can deal with mixed contextual
+features and numerical behavioral features, and we will show empirically that it
+is computationally more efficient than CAD while achieving a higher detection
+accuracy.
+ROCOD (Liang and Parthasarathy, 2016) is also closely related, and uses
+local and global models of expected behavior to describe the dependencies
+between contextual and behavioral features. Concretely, standard regression
+models such as CART are used to learn global patterns, with contextual
+features as predictor variables and behavioral features as response variables.
+Local patterns are computed based on the means of behavioral feature val-
+ues of an object’s neighbours. An object’s actual value is compared to the
+local and global pattern, and the weighted average of these differences forms
+the anomaly score. As the conditional mean describes only one aspect of a
+conditional distribution, and is not necessarily the point with the highest prob-
+ability of occurrence (i.e., the mode). To address this, our method employs
+quantile regression analysis to estimate conditional quantiles, which provide a
+much more complete description of the conditional distribution. As a result,
+our method empirically outperforms ROCOD in terms of accuracy.
+With the increasing use of anomaly detection algorithms in safety-critical
+domains, such as healthcare and manufacturing, the ethical and regulatory
+obligations to provide explanations for the high-stakes decisions made by these
+algorithms has become more pronounced (Li et al, 2022). Existing contextual
+anomaly detection do not provide such explanations though, and non-trivial
+modifications would be needed for them to do so. Specifically, CAD (Song et al,
+2007) computes the anomaly score of a data instance by measuring its devi-
+ation from the mapping functions that are learned from the majority of data
+instances. This approach poses a challenge in generating intrinsic explanations,
+as it does not allow for the attribution of the anomaly score to individual fea-
+tures. Further, ROCOD (Liang and Parthasarathy, 2016), the other known
+method for contextual anomaly detection, calculates the weighted average of
+an instance’s differences to the learned local and global patterns as its anomaly

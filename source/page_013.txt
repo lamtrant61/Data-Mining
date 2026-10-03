@@ -1,0 +1,47 @@
+Springer Nature 2021 LATEX template
+Explainable Contextual Anomaly Detection 13
+To allow for more comprehensive descriptions of conditional distributions,
+Koenker and Hallock (2001) proposed to estimate conditional quantiles . As
+usual, quantiles are splitting points that divide the range of the probability
+distribution into consecutive intervals having equal probability. Given a contin-
+uous variable V , its conditional α-quantile given U = u is defined by Qα(u) =
+inf{v : F (v | U = u) ≥ α}, where F (v | U = u) = P (V ≤ v | U = u) is the
+cumulative distribution function. Conditional quantiles have the potential to
+describe the full conditional distribution of response variable V .
+Existing regression-based anomaly detection methods typically estimate
+the conditional mean of V by its expected value ˆv, and then use the Euclidean
+distance between its actual value and the expected value, i.e., dist(v, ˆv), as
+anomaly score. It is hard to interpret this distance though, as the shape and
+range of the conditional distribution are unknown. In this paper we address this
+by estimating conditional quantiles instead. In particular, we will show that
+we can use conditional quantiles to approximate the probability of observing
+a certain data point in its context, which is then used for the anomaly score.
+4.2 Quantile Regression Forests
+Tree-based regression approaches—such as CART, M5, and Random Forests—
+are often used to learn both linear and non-linear dependencies. Meinshausen
+(2006) extended the Random Forest to Quantile Regression Forest, which
+estimates and predicts conditional quantiles instead of means.
+Specifically, a quantile regression forest (QRF) is constructed by building
+an ensemble of K independent decision trees to estimate the full conditional
+cumulative distribution function of V given U = u, based on n indepen-
+dent observations {(U1, V1), ...,(Ui, Vi), ...,(Un, Vn)}. Each Ui consists of d
+dimensions. The estimated full conditional distribution can be written as
+ˆF (v|U = u) = ˆP (V ≤ v|U = u) = ˆE(I(V ≤ v)|U = u) =
+nX
+i=1
+ωi(u)I(Vi ≤ v),
+(1)
+where ωi(u) denotes the weight assigned to observation ( Ui, Vi).
+The decision trees that make up a quantile regression forest are constructed
+similarly to how a random forest is learned, i.e., for each individual tree m ≤ n
+data points are sampled (with replacement), d
+′
+≪ d features are randomly
+selected, and a criterion such as information gain is used to recursively split
+the data and tree. Each leaf node keeps all its observations though. K decision
+trees, namely T1(θ), ..., TK(θ), are independently grown to form a forest.
+Once the forest has been constructed, for a given U = u each decision tree
+Tj(θ) is traversed to find the leaf node that u resides in. A weight ωi(u, Tj(θ))
+is then computed for each observation Ui, with i ∈ {1, ..., n}: if observation
+Ui and u reside in the same leaf node, then ωi(u, Tj(θ)) is defined as 1 divided
+by the number of samples residing in the leaf node. Otherwise, ωi(u, Tj(θ)) is

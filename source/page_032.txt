@@ -1,0 +1,39 @@
+Springer Nature 2021 LATEX template
+32 Explainable Contextual Anomaly Detection
+0 5 10 15 20 25
+Goals
+0.0
+2.5
+5.0
+7.5
+10.0
+12.5
+15.0Assists
+Anomaly Score
+0 20 40 60 80 100
+Fig. 7 Distribution of all players in the behavioral space Assists × Goals, and their corre-
+sponding anomaly scores given by QCAD. The red curves represent the estimated densities
+of the joint distribution at different levels, the histograms indicate the marginal distribu-
+tions. A larger and darker green dot represents a larger anomaly score as given by QCAD.
+(age of the player), Matches (number of matches played), Starts (number of
+matches that the player was in the starting lineup), and Mins (number of
+minutes the player played overall) as contextual features. Two performance
+statistics, Goals (number of goals scored by the player) and Assists (number
+of assists given by player), are regarded as behavioral features.
+Figure 7 depicts the distribution of all data objects in behavioral space
+Goals × Assists. Without considering contextual information, traditional
+anomaly detectors such as HBOS, LOF, IForest will treat objects in dense areas
+(i.e., objects residing inside the red curves) as normal objects. In contrast, our
+contextual anomaly detector QCAD can detect anomalies in dense areas by
+considering contextual information (i.e., green objects residing inside the red
+curves). Concretely, Figure 7 also presents the anomaly scores given by QCAD
+(with default settings). For example, player Matheus Pereira—who achieved
+11 goals and 6 assists—is reported as an ‘anomaly’ (i.e., as having a relatively
+high anomaly score) by QCAD but as ‘normal’ by traditional anomaly detec-
+tors. Conversely, QCAD considers Patrick Bamford, a player with 17 goals and
+7 assists (in a sparse area), to be normal, while traditional anomaly detectors
+consider him to be an anomaly.
+In addition to giving an anomaly score for each data object, QCAD can
+also provide an explanation. For instance, for Matheus Pereira ( P osition1 =
+”MF”, P osition2 = ”FW”, Age=24, M atches=33, Starts=30, M ins=2577),
+Figure 8 shows the distribution of the values of each contextual feature for all

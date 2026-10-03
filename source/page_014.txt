@@ -1,0 +1,45 @@
+Springer Nature 2021 LATEX template
+14 Explainable Contextual Anomaly Detection
+0. Next, it takes the average of ωi(u, Tj(θ)) over all decision trees, i.e.,
+ωi(u) = 1
+K
+KX
+j=1
+ωi(u, Tj(θ)), (2)
+which is the weight assigned to an observationUi. Finally, conditional quantile
+Qα(u) = inf {v : F (v | U = u) ≥ α} can be estimated by ˆQα(u) = inf {v :
+ˆF (v | U = u) ≥ α}. Under reasonable assumptions, Meinshausen (2006)
+proved quantile regression forests to be consistent, i.e.,
+ ˆF (v | U = u) − F (v | U = u)
+
+p
+− →0, with n − → ∞ (3)
+holds pointwise for every u.
+5 Quantile-based Contextual Anomaly
+Detection and Explanation
+We present an instance of the generic approach for contextual anomaly
+detection presented in Section 3.2 that is based on quantile regression forests.
+The main idea of our method is to estimate the deviation of an object’s
+behavioral values within a given context using uncertainty quantification
+around predictions, where the predictions are assumed to capture ‘normal’
+behavior. Then, a higher uncertainty implies a higher deviation within the
+context and thus a higher degree of anomalousness. To this end several
+approaches could be explored. For example, one might use multi-target regres-
+sion models—such as Multivariate Random Forests (Segal and Xiao, 2011)—on
+all behavioral features, or single-target regression models—such as Random
+Forests (Breiman, 2001)—on individual behavioral features followed by aggre-
+gation and conformal inference (Lei et al, 2018). In this paper we instead opt
+to use Quantile Regression Forests (Meinshausen, 2006), a single-target regres-
+sion model, because it is (relatively) simple, offering advantages with regard to
+interpretability, and directly provides uncertainty quantifications. More con-
+cretely, we derive intervals for the behavioral features from the underlying
+quantile regression forests as inherent uncertainty quantifications around pre-
+dictions, resulting in statistically sound and interpretable measures of degree
+of anomaly.
+In the first phase, we generate reference groups using a distance matrix
+computed on the contextual space of all data points. Specifically, we use
+Gower’s distance (Gower, 1971) (see Section 6.1.1 for more detail), to be able
+to deal with both quantitative and categorical features, and select thek objects
+having the smallest distances to an object x as its reference group R(x, k).
+Next, in the second phase, an anomaly score is computed for each indi-
+vidual data point, based on the values in the behavioral space of the data

@@ -1,0 +1,73 @@
+Springer Nature 2021 LATEX template
+20 Explainable Contextual Anomaly Detection
+Encoding (Seger, 2018) to transform categorical contextual features to numer-
+ical form. Second, we employ Min-Max normalisation to scale all behavioral
+features to [0 , 1]. Min-Max normalization is routinely used in many anomaly
+detection and generally improves performance (Kandanaarachchi et al, 2020).
+Gower’s Distance To be able to calculate the similarity between two
+data points containing both categorical and numerical features, we can utilise
+Gower’s distance (Gower, 1971). Specifically, the Gower’s distance between
+data points ci = ( c1
+i , ..., cp
+i , ...cP
+i ) and cj = ( c1
+j , ..., cp
+j , ...cP
+j ) is defined as
+1 − 1
+P
+PP
+p=1 psp
+ij, where psp
+ij represents the partial similarity between data
+instances ci and cj in the p-th dimension. For a numerical feature, psp
+ij =
+1 − |cp
+i −cp
+j |
+max(cp)−min(cp) , with max( cp) and min( cp) denoting the maximum and
+minimum value of all data points for the p-th feature, respectively. For a cate-
+gorical feature, psp
+ij = I(cp
+i − cp
+j ), where I(·) represents the indicator function.
+Consequently, Gower’s distance between two data points is always in [0 , 1],
+with a lower value indicating a larger similarity.
+6.1.2 Perturbation Scheme for Outlier Injection
+Song et al (2007) proposed a perturbation scheme to inject contextual anoma-
+lies in datasets without ground-truth anomalies, which has become a de-facto
+standard for the evaluation of contextual anomaly detection (Song et al, 2007;
+Liang and Parthasarathy, 2016; Zheng et al, 2017; Calikus et al, 2021).
+This perturbation scheme, however, has also been criticised for two rea-
+sons (Song et al, 2007; Kuo et al, 2018). First, the objects obtained by simply
+swapping the feature values are still likely to be contextually normal. Second,
+some very common types of anomalies cannot be yielded through this pertur-
+bation scheme. For example, one cannot obtain extreme values by swapping
+features values in a clean dataset, whereas most anomaly detection methods
+assume the training dataset is uncontaminated. To avoid these problems, Kuo
+et al (2018) introduced another perturbation scheme to inject anomalies. We
+develop a new perturbation scheme by refining this scheme, as follows.
+Given a dataset X containing N data instances with contextual feature
+set C = {c1, ...,cP } and behavioral feature set B = {b1, ...,bQ}, we first use
+Min-Max normalization to scale the behavioral features of all objects to [0 , 1]
+(keeping the contextual features intact), resulting in a new dataset ˜X. Sec-
+ond, to inject m anomalies into ˜X, with 0 < m ≪ N , we select m objects
+x1, . . . ,xm uniformly at random from ˜X. For each x = (c, b) in ˜X, c repre-
+sents the contextual feature values andb denotes the behavioral feature values.
+Third, for a selected object xi = ( ci, bi) = ( c1
+i , ..., cp
+i , ..., cP
+i , b1
+i , ..., bq
+i , ..., bQ
+i )
+and behavioral feature bq, we sample a number uniformly at random from
+[−0.5, −0.1] S[0.1, 0.5], and then add this random number to the behavioral
+feature value of xi, namely bq
+i , resulting in ˆbq
+i . In the same manner, we repeat
+this process for each behavioral feature, resulting in (ˆb1
+i , ...,ˆbQ
+i ), or ˆbi. Accord-
+ingly, we generate a new object ˜x = (c, ˆb) as contextual anomaly. Fourth, we
+repeat the third step for each selected object, leading to m perturbed objects.

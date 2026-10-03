@@ -1,0 +1,48 @@
+Springer Nature 2021 LATEX template
+18 Explainable Contextual Anomaly Detection
+s(x|bq) =
+
+
+
+η
+100 , if is(x|bq) > η
+100 ;
+is(x|bq), otherwise,
+(5)
+where η is a hyperparameter. The rationale for η is as follows: if the con-
+ditional distribution is uniformly distributed and the behavioral feature has
+range [0 , 1], then the expected width of any percentile interval width is 0 .01
+and η can be interpreted as the maximum number of expected percentile inter-
+val widths . In the experiments we use η = 10 because of its strong empirical
+performance (also shown in the ablation study in Appendix D).
+By scaling the behavioral features to [0 , 1] before anomaly detection, e.g.,
+using min-max normalization, the estimated conditional percentiles should also
+lie in this interval and the interval widths obtained for the individual behavioral
+features should thus be comparable. In turn, this implies they can be summed
+to obtain the final anomaly score for a data point (Algorithm 1, Line 9).
+5.2 Explaining Anomalies with Anomaly Beanplots
+In the third phase, we provide explanations for the reported anomalies. From
+the definition of our anomaly score it is clear that it is attributable: the overall
+score can be decomposed into partial scores for individual behavioral features.
+For each identified anomaly a, we report its contextual neighbours R(a)
+and the final anomaly score as computed on Line 9 of Algorithm 1. Further,
+we report the partial anomaly scores corresponding to the behavioral features,
+i.e., we report s(x|bq) for all q, ranked from highest to lowest to indicate in
+which behavioral features the anomaly deviates most.
+Since visualisation often helps to quickly provide valuable insight, we pro-
+pose the anomaly beanplot , a variant of the beanplot by Kampstra (2008).
+Figure 4 shows an example, visually depicting the learned conditional per-
+centiles, their interval widths, and the probability densities that can be
+estimated from those, all for a particular data point and behavioral feature.
+(Remember that a quantile regression forest is learned on the reference group of
+a data point, hence the anomaly beanplot for each data point may be different.)
+By including the actual value of the data point in the beanplot (as a hori-
+zontal black line), the analyst can easily see how its behavioral feature value is
+positioned relative to those of its reference group, and why and to what extent
+it contributes to the its anomalousness.
+6 Experiments
+To demonstrate the effectiveness of our overall approach and proposed method
+QCAD, we conduct experiments on a wide range of synthetic and real-world
+datasets. We will first explain the choices regarding datasets, baseline algo-
+rithms, and evaluation criteria, after which we present both quantitative results
+and a case study that investigates interpretability and practical utility.

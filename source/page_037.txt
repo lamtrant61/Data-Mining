@@ -1,0 +1,37 @@
+Springer Nature 2021 LATEX template
+Explainable Contextual Anomaly Detection 37
+Huang Ya, Fan W, Lee W, et al (2003) Cross-feature analysis for detecting
+ad-hoc routing anomalies. In: 23rd International Conference on Distributed
+Computing Systems, 2003. Proceedings., IEEE, pp 478–487
+Hwang I, Kim S, Kim Y, et al (2009) A survey of fault detection, isolation, and
+reconfiguration methods. IEEE transactions on control systems technology
+18(3):636–653
+Kampstra P (2008) Beanplot: A boxplot alternative for visual comparison of
+distributions. Journal of statistical software 28(1):1–9
+Kandanaarachchi S, Mu˜ noz MA, Hyndman RJ, et al (2020) On normalization
+and algorithm selection for unsupervised outlier detection. Data Mining and
+Knowledge Discovery 34(2):309–354
+Koenker R, Hallock KF (2001) Quantile regression. Journal of economic
+perspectives 15(4):143–156
+Kriegel HP, Kr¨ oger P, Schubert E, et al (2009) Outlier detection in axis-parallel
+subspaces of high dimensional data. In: Pacific-asia conference on knowledge
+discovery and data mining, Springer, pp 831–838
+Kriegel HP, Kr¨ oger P, Schubert E, et al (2012) Outlier detection in arbitrarily
+oriented subspaces. In: 2012 IEEE 12th international conference on data
+mining, IEEE, pp 379–388
+Kuo YH, Li Z, Kifer D (2018) Detecting outliers in data with correlated
+measures. In: Proceedings of the 27th ACM International Conference on
+Information and Knowledge Management, pp 287–296
+Lei J, G’Sell M, Rinaldo A, et al (2018) Distribution-free predictive
+inference for regression. Journal of the American Statistical Association
+113(523):1094–1111
+Li Z, Zhu Y, van Leeuwen M (2022) A survey on explainable anomaly
+detection. arXiv preprint arXiv:221006959
+Liang J, Parthasarathy S (2016) Robust contextual outlier detection: Where
+context meets sparsity. In: Proceedings of the 25th ACM International on
+Conference on Information and Knowledge Management, pp 2167–2172
+Liu FT, Ting KM, Zhou ZH (2008) Isolation forest. In: 2008 eighth ieee
+international conference on data mining, IEEE, pp 413–422
+Liu N, Shin D, Hu X (2018) Contextual outlier interpretation. In: Proceedings
+of the 27th International Joint Conference on Artificial Intelligence, pp 2461–
+2467

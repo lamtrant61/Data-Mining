@@ -1,0 +1,90 @@
+Springer Nature 2021 LATEX template
+Explainable Contextual Anomaly Detection 33
+MF FW DF GK
+Position1
+0
+20
+40
+60
+80
+100
+120
+140
+160count
+FW MF DF GK
+Position2
+0
+20
+40
+60
+80
+100
+120count
+20 30
+Age
+0
+10
+20
+30
+40
+50
+60count
+0 20
+Matches
+0
+5
+10
+15
+20
+25
+30
+35
+40count
+0 20
+Starts
+0
+10
+20
+30
+40
+50
+60count
+0 2000
+Mins
+0
+10
+20
+30
+40
+50count
+Fig. 8 Explanations for the identified anomalous player Matheus Pereira based on his refer-
+ence group. Shown are the values for Matheus Pereira (red bins) relative to the distribution
+of his contextual neighbours for each contextual feature.
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5Goals (scaled)
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7Assists (scaled)
+Fig. 9 Explaining why Matheus Pereira is considered an anomaly: exceptionally many
+goals compared to contextually similar players, and relatively many assists. The beanplot
+shows the estimated conditional distribution of each behavioral feature, with a wider red
+area representing a higher probability of occurrence. The horizontal black lines represent the
+values reported for the player being investigated.
+players in his contextual neighbourhood (i.e., similar players). It can be seen
+that most of these players are Midfielder (MF) and/or Forward(FW), aged
+from 22 to 28, playing matches more than 25 times, etc. The anomaly score is
+65.8, which puts this player in the top-10 of most anomalous players. This score
+can be decomposed according to the behavioral features to give the behavioral
+feature(s) that contribute the most to the obtained anomaly score; Goals, in
+this case. Moreover, Figure 9 shows how the beanplot-like visualisation can
+help to give insight in how the behavioral feature values deviate from those
+in the player’s contextual neighbourhood. From these plots we can see that

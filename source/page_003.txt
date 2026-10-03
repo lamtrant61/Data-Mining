@@ -1,0 +1,33 @@
+Springer Nature 2021 LATEX template
+Explainable Contextual Anomaly Detection 3
+(a) (b)
+(c) (d)
+Fig. 1 Different types of anomaly detection. (a) Distance- and density-based methods both
+consider object B to be abnormal, because it is far away from other objects and in a low-
+density region. (b) Dependency-based methods model the relationship between height and
+weight, and consequently consider object B to be normal. (c) Conditional quantiles provide
+more information about the conditional distribution than just the mean, and (d) can be used
+to visualise—using beanplots (or, rather, a variation of a beanplot combined with boxplots,
+see Section 5.2 for details)—why a certain object is considered (ab)normal.
+Using either of these assumptions may lead to false positives though. For exam-
+ple, as shown in Figure 1(a), these methods will mistakenly identify object B
+as an anomaly if the aim is to detect people that are over- or underweight.
+As this is often undesirable, we aim to define and detect anomalies from
+another perspective, that is, we assume that objects that violate a dependency,
+i.e., a relationship between features, are anomalous . This is the idea behind
+dependency-based anomaly detection (Lu et al, 2020a), which is not new but
+has received limited attention compared to other types of anomalies. It lever-
+ages the intrinsic structure and properties of the data to find potentially more
+relevant anomalies. For example, Figure 1(b) shows that this approach will
+identify object B as normal by modelling the dependency between height and
+weight.
+Traditional anomaly detection techniques—including distance-, density-,
+and dependency-based methods—treat all features equally when identifying
+anomalies. However, in domains such as healthcare, sensor networks, and envi-
+ronment protection, some features should never be used directly to quantify
+anomalousness. For instance, forest fire detection systems should not treat
+‘deviating’ values of latitude, longitude, date, and time as an indication of an
+anomaly. We should not simply discard these features either though, as they
+may contain relevant information. For example, the ‘normal’ temperature may
+be higher for certain regions than for others. This motivates us to investigate
+contextual anomaly detection, which can take such extra features into account.

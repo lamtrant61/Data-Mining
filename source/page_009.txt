@@ -1,0 +1,57 @@
+Springer Nature 2021 LATEX template
+Explainable Contextual Anomaly Detection 9
+T able 1Running example: fictional climate data for Dutch cities. Temperature is
+measured in degrees Celsius, rain in mm, and wind in miles per hour. The city is not used
+for anomaly detection. Latitude, Longitude and Season are treated as contextual features,
+while T emperature, Rain and Wind are considered the behavioral features.
+City Latitude Longitude Season T emperature Rain Wind
+Leiden 52.16 4.49 Winter 3.0 69 16
+Amsterdam 52.37 4.89 Winter 2.9 55 17
+Rotterdam 51.92 4.46 Winter 2.7 60 15
+Oss 51.45 5.31 Winter 1.1 58 25
+Eindhoven 51.44 5.46 Autumn 16.6 62 25
+Delft 52.00 4.21 Autumn 16.1 45 19
+Utrecht 52.09 5.10 Autumn 18.3 42 20
+The Hague 52.07 4.28 Autumn 18.5 49 18
+Tilburg 51.33 5.52 Summer 22.1 39 22
+Middelburg 51.49 3.61 Summer 20.3 41 23
+Arnhem 51.98 5.89 Summer 19.6 48 17
+Venlo 51.37 6.17 Summer 21.8 43 35
+Emmen 52.46 6.55 Spring 8.3 80 10
+Meppel 52.69 6.19 Spring 7.1 27 13
+Groningen 53.13 6.34 Spring 4.2 17 19
+Leeuwarden 53.10 5.80 Spring 7.2 17 19
+xi = (x1
+i , ..., xP
+i , xP +1
+i , ..., xP +Q
+i ) = (c1
+i , ..., cp
+i , ..., cP
+i , b1
+i , ..., bq
+i , ..., bQ
+i ) = (ci, bi),
+so that ci and bi denote its contextual and behavioral feature values, respec-
+tively. Accordingly, we refer to the space spanned by C as contextual space,
+i.e., C = c1 × ... × cp × ... × cP , and to the space spanned by B as behavioral
+space, i.e., B = b1 × ... × bq × ... × bQ.
+Finally, let Pow denote the powerset, i.e., Pow( X) = {X ⊆ X}.
+3.1 Problem Statement
+In contextual anomaly detection, contextual features are used to determine the
+so-called context of an object. An object’s context is used to estimate whether
+it is anomalous. The latter is achieved by comparing the object’s values for
+the behavioral features to what is ‘normal’ within the object’s context—if the
+object’s behavioral values strongly deviate, it is flagged as an anomaly.
+For contextual anomaly detection to be meaningful, we must assume that
+there exist dependencies between the contextual and behavioral data . If such a
+relationship does not exist, there is no need to use contextual anomaly detec-
+tion; one could simply remove the contextual features and reduce the problem
+to a traditional anomaly detection problem.
+We illustrate this using the running example in Table 1. We can detect
+anomalous weather taking into account different regions and seasons by
+specifying contextual feature set C = {Latitude, Longitude, Season} and
+behavioral feature set B = {T emperature, Rain, W ind}. Each city is now
+only compared to cities with a similar latitude, longitude, and season, i.e., its
+context. If a city has values for temperature, rain, and/or wind that strongly
+deviate from those of the cities in its context, it is marked as anomalous.

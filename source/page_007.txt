@@ -1,0 +1,44 @@
+Springer Nature 2021 LATEX template
+Explainable Contextual Anomaly Detection 7
+score. The local pattern is obtained using its neighbours, while the global pat-
+tern is learned using all instances, making it difficult to associate the anomaly
+score with individual features.
+Despite the existence of numerous methods for explaining anomalies, such
+as those outlined in recent (survey) papers (Panjei et al, 2022; Li et al, 2022;
+Xu et al, 2021), there has been very limited research on contextual anomaly
+explanation. Particularly, COIN (Liu et al, 2018) explains outliers by report-
+ing their outlierness score, the features that contribute to its abnormality,
+and a contextual description of its neighbourhoods. COIN treats all features
+equally though, while our method divides features into contextual and behav-
+ioral features. Further, we develop a visualisation that helps explain contextual
+anomalies in addition to reporting the overall anomaly score, feature impor-
+tance, contextual neighbours, and individual anomaly score for each behavioral
+feature.
+The following methods are less relevant because they consider slightly dif-
+ferent problems. Valko et al (2011) construct a non-parametric graph-based
+method for conditional anomaly detection, which only addresses the prob-
+lem of a single categorical behavioral feature. Hayes and Capretz (2014) first
+identify anomalies on behavioral features, and then refine the detected anoma-
+lies by clustering all objects on contextual features. Tang et al (2015) detect
+group anomalies from multidimensional categorical data. Hong and Hauskrecht
+(2015) present a contextual anomaly detection framework dedicated to cat-
+egorical behavioral features which also considers the dependencies between
+behavioral features. Moreover, Zheng et al (2017) apply robust metric learn-
+ing on contextual features to find more meaningful contextual neighbours and
+then leverage k-NN kernel regression to predict the behavioral feature values.
+Meghanath et al (2018) develop ConOut to automatically find and incorporate
+multiple contexts to identify and interpret outliers.
+2.2 Traditional Anomaly Detection
+Although traditional anomaly detection considers a problem that is differ-
+ent from contextual anomaly detection, dependency-based and subspace-based
+anomaly detection leverage techniques that are related to our method.
+2.2.1 Dependency-based Anomaly Detection
+Dependency-based anomaly detection aims to identify anomalies by exploring
+dependencies between features. Teng (1999) explores the dependency between
+non-target and target features to identify and correct possible noisy data
+points. To detect networking intrusions, Huang et al (2003) present Cross-
+Feature Analysis to capture the dependency patterns between features in
+normal networking traffic. To detect disease outbreaks, Wong et al (2003) pro-
+pose to explore the dependency between features using a Bayesian network.
+Noto et al (2010) propose to detect anomalies by using an ensemble of mod-
+els, with each model exploring the dependency between a response feature

@@ -1,0 +1,100 @@
+Springer Nature 2021 LATEX template
+Explainable Contextual Anomaly Detection 47
+PRC Diff
+ROC Diff
+P@n Diff
+01234
+num_data
+0.28 0.03 0.26
+0.21 0.05 0.14
+0.15 0.01 0.08
+0.23 0.04 0.20
+0.16 0.02 0.12
+Energy
+PRC Diff
+ROC Diff
+P@n Diff
+0.02 0.00 0.04
+0.02 0.00 0.04
+0.03 0.01 0.08
+0.06 0.01 0.08
+0.01 0.00 0.02
+Forest Fires
+PRC Diff
+ROC Diff
+P@n Diff
+0.37 0.08 0.33
+0.36 0.07 0.33
+0.42 0.07 0.37
+0.43 0.09 0.37
+0.37 0.08 0.40
+Hepatitis
+PRC Diff
+ROC Diff
+P@n Diff
+0.08 0.03 0.07
+0.10 0.03 0.07
+0.07 0.02 0.13
+0.08 0.04 0.13
+0.08 0.02 0.07
+Heart Failure
+PRC Diff
+ROC Diff
+P@n Diff
+0.25 0.04 0.30
+0.17 0.03 0.27
+0.27 0.03 0.17
+0.19 0.04 0.20
+0.13 0.02 0.27
+Indian Liver Patient
+PRC Diff
+ROC Diff
+P@n Diff
+0.09 0.02 0.08
+0.11 0.03 0.10
+0.12 0.01 0.12
+0.10 0.03 0.03
+0.10 0.01 0.05
+QS ranking
+PRC Diff
+ROC Diff
+P@n Diff
+0.45 0.05 0.50
+0.39 0.04 0.40
+0.45 0.04 0.50
+0.57 0.08 0.56
+0.42 0.04 0.48
+Synthetic 5
+PRC Diff
+ROC Diff
+P@n Diff
+0.34 0.01 0.42
+0.29 0.01 0.38
+0.33 0.01 0.42
+0.28 0.02 0.40
+0.38 0.02 0.46
+Synthetic 10
+0.4
+0.2
+0.0
+0.2
+0.4
+Fig. D2 Effects of scaling matched conditional quantile interval length. For each dataset,
+the results are obtained by performing 5 independent trials of injecting contextual anomalies.
+For each trial, which is represented by the y-axis (namely num data), the results are the
+difference (in terms of PRC AUC, ROC AUC, Precision@n, respectively) of methods with
+or without scaling the matched conditional quantile interval length. The large differences on
+most datasets imply the critical importance of scaling matched conditional quantile interval
+length.
+As shown in Figure D3, increasing η will lead to higher PRC AUC, ROC
+AUC and Precision@n values when η is small (i.e., less than 1 for most
+datasets). Next, on the one hand, the ROC AUC stays stable as η increases,
+even without clipping (i.e. η = N one). In other words, the clipping strategy
+does not affect ROC AUC metric. On the other hand, the PRC AUC and Pre-
+cision@n gradually climb to a plateau as η increases. After a certain period,
+the PRC AUC and Precision@n start decreasing with an increase of η. Overall,
+on most datasets, PRC AUC and Precision@n generally achieve higher values
+with 3 ≤ η ≤ 10 than those without clipping. Therefore, the dictator effects
+indeed exist and they mainly reduce the performance of QCAD in terms of
+PRC AUC and Precision@n. Moreover, our proposed clipping strategy can
+effectively overcome this problem.

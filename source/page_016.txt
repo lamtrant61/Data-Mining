@@ -1,0 +1,35 @@
+Springer Nature 2021 LATEX template
+16 Explainable Contextual Anomaly Detection
+(b)(a)
+Fig. 3 (a) Estimated conditional quantiles {Q0.1, Q0.2, . . . , Q0.9} for a behavioral feature
+conditioned on contextual features. (b) Zooming in on the area between Q0.40 and Q0.50,
+we see that percentiles are more likely to be sufficiently detailed than the quantiles in (a).
+to all have equal potential to contribute to the overall anomaly score. After
+this, the data point, its reference group, and its anomaly score are appended
+to the anomaly score list (Ln 10). Finally, the anomaly score list is returned
+as output (Ln 12).
+Within the inner for loop, we first learn a quantile regression forest using
+behavioral feature bq as response variable and the data point’s reference group
+R(x, k) as training data (Ln 6). All contextual features C are used as pre-
+dictor variables for every constructed QRF. We then use the learned quantile
+regression forest, the features, and the data point to compute the raw partial
+anomaly score (Ln 7), which we will motivate and explain in detail next.
+QRF-based anomaly score
+As argued in the Introduction and Subsection 4.1, taking the distance between
+a data point and a conditional mean as basis for a contextual anomaly score
+may be too limiting: this only works if all ‘normal’ data points reside close to
+the mean. Instead, we aim to—conceptually—consider the entire conditional
+probability density function and use the local density of a given data point as a
+proxy for anomalousness: the lower the density, the higher the anomaly score.
+Directly accurately estimating the density function is hard though, especially
+in areas of low density, which are of particular importance to us.
+This is where the quantile regression forests come in: given sufficient
+training data, they accurately learn the conditional cumulative distribution
+function, which can be queried in inverse form, i.e., through conditional
+quantiles. When querying a quantile regression forest, this can be done at
+different granularities. For example, Figure 3(a) shows that conditional quan-
+tiles {Q0.1, Q0.2, . . . , Q0.9} may very well be insufficient to accurately describe
+a conditional distribution as they overly smooth the underlying distribution
+and thus fail to capture the nuances accurately, while Figure 3(b) show that
+conditional percentiles, i.e., {Q0.01, Q0.02, . . . , Q0.99}, are much more likely to
+provide sufficient detail.

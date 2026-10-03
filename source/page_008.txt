@@ -1,0 +1,49 @@
+Springer Nature 2021 LATEX template
+8 Explainable Contextual Anomaly Detection
+and other features. Babbar and Chawla (2012) use Linear Gaussian Bayesian
+networks to detect anomalies that violate causal relationships.
+LoPAD (Lu et al, 2020b) first uses a Bayesian network to find the Markov
+Blankets of each feature. Then, a predictive model (e.g., CART) is learnt
+for each individual feature as response variable, with its Markov Blankets as
+predictor variables. Given an object, LoPAD computes the Euclidean distance
+between its actual value and predicted value (i.e., conditional mean) as its
+anomaly score, for each feature. The resulting anomaly scores are normalized
+and summed to obtain the final anomaly score for an object. The method
+does not distinguish contextual and behavioral features and—like ROCOD—
+uses conditional means to represent the conditional distribution. Consequently,
+LoPAD cannot (accurately) detect contextual anomalies.
+2.2.2 Subspace-based Anomaly Detection
+Subspace-based anomaly detection seeks to find anomalies in part of the fea-
+ture space. Specifically, Kriegel et al (2009) propose SOD to identify outliers in
+varying subspaces. Concretely, they construct axis-parallel subspaces spanned
+by the neighbours of a given object. On this basis, they investigate whether
+this object deviates significantly from its neighbours on any of these subspaces.
+Furthermore, Kriegel et al (2012) extend this work to determine whether an
+object is anomalous on arbitrarily oriented subspaces spanned by its neigh-
+bours. Nguyen et al (2013) propose to find subspaces with strong mutual
+correlations and then identify anomalies on these subspaces. Finally, Cabero
+et al (2021) use archetype analysis to project the feature space into various
+subspaces with linear correlations based on nearest neighbours. On this basis,
+they explore outliers by ensembling the results obtained on relevant subspaces.
+Overall, these methods pursue to identify anomalies in a subset of features,
+but treat all features equally and are thus not suitable to identify contextual
+anomalies.
+3 Contextual Anomaly Detection and
+Explanation
+We first introduce the necessary terminology and notations, and illus-
+trate this with the running example depicted in Table 1. A dataset
+X = {x1, . . . ,xi, . . . ,xN } contains N instances (or data points) over
+the set of features (a.k.a. attributes or variables) denoted by F =
+{f 1, . . . ,f j, . . . ,f D}. xj
+i denotes the value of the i-th object, xi, for the j-
+th feature, f j. In the running example, we have N = 16, D = 6, F =
+{Latitude, Longitude, Season, T emperature, Rain, W ind}, and xRain
+1 = 69.
+We assume that feature set F is divided into two disjoint feature
+sets (typically using domain knowledge): a contextual feature set C =
+{c1, ...,cp, . . . ,cP } and a behavioral feature setB = {b1, . . . ,bq, . . . ,bQ}, such
+that D = P + Q, F = C ∪ B, and C ∩ B = ∅. Without loss of generality, we can
+rearrange the features of an object xi = (x1
+i , ..., xj
+i , ..., xD
+i ) and represent it as

@@ -1,0 +1,37 @@
+Springer Nature 2021 LATEX template
+Explainable Contextual Anomaly Detection 21
+Fifth and final, we replace the selected objects in the original dataset with
+their corresponding perturbed objects. To allow extreme values to be injected,
+we deliberately do not truncate the values outside [0, 1] after adding a random
+number in each behavioral feature.
+Our perturbation scheme has the following advantages. When compared to
+the swapping perturbation scheme proposed by Song et al (2007), the objects
+obtained by our perturbation scheme are very unlikely to remain contextually
+normal. In addition, our perturbation scheme can—but does not always—lead
+to extreme values. Note that we do not strictly follow the perturbation scheme
+proposed by Kuo et al (2018) because their method only adds a non-negative
+number to the behavioral features. On the one hand, sometimes this non-
+negative number is zero, leading to injecting a normal object as ‘anomaly’.
+On the other hand, sometimes this non-negative number is huge, which makes
+the injected object (too) easy to detect. Our perturbation scheme avoids these
+problems by firstly normalising the behavioral feature values, and then setting
+more reasonable lower and upper bounds for the perturbation.
+6.1.3 Datasets
+To evaluate and compare our method on a diverse range of datasets, we gen-
+erate 10 synthetic datasets and select 20 real-world datasets; their properties
+are summarised in Tables 2 and 3 respectively.
+T able 2Summary of synthetic datasets. # N um,#Cat, #C and #B represent the
+number of numerical features, the number of categorical/nominal features, the number of
+contextual features, and the number of behavioral features, respectively. All behavioral
+features are numerical, the contextual features can be mixed.
+Dataset Scheme #Num #Cat # C #B
+Syn1 S1 8 2 5 5
+Syn2 S2 8 2 5 5
+Syn3 S3 8 2 5 5
+Syn4 S4 8 2 5 5
+Syn5 S5 8 2 5 5
+Syn6 S1 19 6 20 5
+Syn7 S2 19 6 20 5
+Syn8 S3 19 6 20 5
+Syn9 S4 19 6 20 5
+Syn10 S5 19 6 20 5

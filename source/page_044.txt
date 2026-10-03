@@ -1,0 +1,43 @@
+Springer Nature 2021 LATEX template
+44 Explainable Contextual Anomaly Detection
+into a six-month trial of remote monitoring equipment for remote symptom
+progression monitoring. The features such as subject, age, sex, test time,
+Jitter, Jitter Abs, Jitter RAP, Jitter PPQ5, Jitter DDP, Shimmer, Shim-
+mer dB, Shimmer APQ3, Shimmer APQ5, Shimmer APQ11, Shimmer DDA,
+NHR, HNR, RPDE, DF A, PPE descirbe the background information, and
+thus are used as contextual features. Meanwhile, the corresponding scores
+motor UPDRS and total UPDRS are used as behavioral features. This dataset
+is downloaded from UCI, 19 containing no missing values.
+Power Plant
+This dataset contains 9568 records from a combined cycle power plant which
+worked with full load from 2006 to 2011. Features such as hourly average ambi-
+ent variables temperature, ambient pressure, relative humidity and exhaust
+vacuum (e.g., T, AP, RH and EP) are considered as contextual features, while
+the net hourly electrical energy output (EP) is regarded as behavioral feature.
+This dataset is downloaded from UCI, 20 containing no missing values.
+QS University Ranking
+This dataset contains the QS rankings of the world universities from 2018
+to 2020. We consider the wolrd rankings, national rankings and location of
+each university from 2018 to 2020, i.e., World2018, National2018, World2019,
+National2019,World2020, National2020, Country as contextual features. We
+use six features that are considered for the ranking (i.e., Academic Reputa-
+tion, Employer Reputation, Faculty to Student Ratio, Number of citations per
+faculty, International Faculty, International Students) as behavioral features.
+The original data is crawled from the QS website, 21 containing 475 records
+after dropping missing values.
+QSAR Fish Toxicity
+This dataset contains 908 records about the fish Pimephales promelas. Specif-
+ically, the six features describing the molecular of 908 chemicals will be used
+as contextual features, and the corresponding acute aquatic toxicity measure
+will be used as behavioral feature. This dataset is downloaded from UCI, 22
+containing no missing values.
+Synchronous Machine
+This dataset contains 557 records from a real experimental set. This exper-
+iment aims to construct a model to estimate the excitation current of
+synchronous motors. Specifically, we use the features describing the load cur-
+rent, power factor, power factor error and changing of excitation current (e.g.,
+Iy, PF, e and dIf) as contextual features. Accordingly, the feature which
+19https://archive.ics.uci.edu/ml/datasets/Parkinsons+Telemonitoring
+20https://archive.ics.uci.edu/ml/datasets/Combined+Cycle+Power+Plant
+21https://www.topuniversities.com/qs-world-university-rankings
+22https://archive.ics.uci.edu/ml/datasets/QSAR+fish+toxicity

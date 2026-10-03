@@ -1,0 +1,58 @@
+Springer Nature 2021 LATEX template
+Explainable Contextual Anomaly Detection 11
+Compute Distance 
+Matrix using 
+Contextual Features
+Findcontextual
+nearest neighbours
+foreachobject
+Reference Group
+Target
+Report contextual neighbours 
+(reference group)
+Reported
+Anomaly
+Report
+Context
+Report
+AnomalyScore
+Decompose
+Anomaly
+Score
+Reportraw anomalyscore
+ineachbehavioural feature
+Understandwhy
+it isanomalous?
+(a) Reference Group Generation (b) AnomalyExplanation
+Fig. 2 Reference Group Generation and Anomaly Explanation. The Reference Group
+Generation phase computes the distance matrix using only the contextual features, and finds
+a reference group for each object on this basis. The Anomaly Explanation phase produces
+an explanation for each identified anomaly by reporting its contextual neighbours, final
+anomaly score, and raw anomaly scores in each behavioral feature.
+space based on M. As a result, the k nearest neighbours of x form a reference
+group, denoted as R(x, k), which serves as context in Problems 1 and 2.
+For instance, as shown in Figure 2 (a), given
+{Latitude, Longitude, Season} as the contextual feature set, we first calculate
+the distance matrix in the contextual space Latitude × Longitude × Season.
+Second, based on the distance matrix, we can find the three nearest neigh-
+bours of any object as its reference group 2. Concretely, the three nearest
+neighbours for x1 are {x2, x3, x4}, which forms a reference group for x1,
+denoted as R(x1, 3).
+Phase 2: Anomaly Detection
+Given an object x ∈ X with its reference group R(x, k), we apply an anomaly
+detector Anomaly to obtain an anomaly score based only on the behavioral
+attribute values . We repeat the above process for all objects, leading to N
+anomaly scores S = {s1, s2, ..., sN }. We sort S and use threshold ϕ to obtain
+a ranked list of contextual anomalies A = {a1, ...,am, ...,aM }, with M ≪ N .
+For example, we can apply an anomaly detector on the behavioral space
+T emperature× Rain × W indof x1 and its reference group R(x1, 3) =
+{x2, x3, x4}. As a result, we obtain anomaly score s1 for x1. Accordingly,
+repeating this process leads to a set of anomaly scores S = {s1, ..., s16}. In
+our running example we find {x4, x12, x13} as contextual anomalies, as they
+behave differently in the behavioral space T emperature× Rain × W indwhen
+compared to their corresponding neighbours defined in the contextual space
+Latitude × Longitude × Season. For example, Oss (x4) has relatively stronger
+winds in winter when compared to its nearest cities Leiden, Amsterdam and
+Rotterdam.
+2We use k = 3 for illustrative purposes; in practice, we would have a dataset with far more
+than 16 records and k would also be much larger.

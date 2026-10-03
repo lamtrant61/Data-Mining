@@ -1,0 +1,72 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+\setsansfont{Arial}
+\setmonofont{Consolas}
+\usepackage[vietnamese]{babel}
+\usepackage{geometry}
+\geometry{margin=2.4cm}
+\usepackage{amsmath,amssymb,mathrsfs,mathtools}
+\usepackage{graphicx,booktabs,longtable,array,multirow}
+\usepackage{caption,rotating,float}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{natbib}
+\usepackage{xcolor}
+\usepackage{xparse}
+\usepackage{hyperref}
+\hypersetup{unicode=true,colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+\Urlmuskip=0mu plus 1mu\relax
+\setlength{\parindent}{1.2em}
+\setlength{\parskip}{0.35em}
+
+\DeclareMathOperator{\Pow}{Pow}
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+\newcommand{\anomaly}{\emph{Bất thường}}
+\newcommand{\context}{\emph{Ngữ cảnh}}
+\providecommand{\textpm}{\ensuremath{\pm}}
+\newcommand{\botrule}{\bottomrule}
+\newcommand{\bibcommenthead}{}
+\newcommand{\bmhead}[1]{\subsection*{#1}}
+
+% Tương thích với các lệnh siêu dữ liệu của mẫu Springer Nature gốc.
+\ExplSyntaxOn
+\tl_new:N \g_vn_title_tl
+\tl_new:N \g_vn_abstract_tl
+\tl_new:N \g_vn_keywords_tl
+\RenewDocumentCommand{\title}{o m}{\tl_gset:Nn \g_vn_title_tl {#2}}
+\RenewDocumentCommand{\author}{s m}{}
+\NewDocumentCommand{\fnm}{m}{#1}
+\NewDocumentCommand{\sur}{m}{#1}
+\NewDocumentCommand{\email}{m}{}
+\NewDocumentCommand{\affil}{m}{}
+\NewDocumentCommand{\orgdiv}{m}{#1}
+\NewDocumentCommand{\orgname}{m}{#1}
+\NewDocumentCommand{\country}{m}{#1}
+\RenewDocumentCommand{\abstract}{m}{\tl_gset:Nn \g_vn_abstract_tl {#1}}
+\NewDocumentCommand{\keywords}{m}{\tl_gset:Nn \g_vn_keywords_tl {#1}}
+\RenewDocumentCommand{\maketitle}{}{
+  \begin{center}
+    {\LARGE\bfseries \tl_use:N \g_vn_title_tl \par}
+    \vspace{1em}
+    {\large Zhong~Li \quad và \quad Matthijs~van~Leeuwen\par}
+    \smallskip
+    {Viện~Khoa~học~Máy~tính~Tiên~tiến~Leiden~(LIACS),~Đại~học~Leiden,~Hà~Lan\par}
+  \end{center}
+  \noindent\textbf{Tóm tắt.}~\tl_use:N \g_vn_abstract_tl\par\medskip
+  \noindent\textbf{Từ khóa:}~\tl_use:N \g_vn_keywords_tl
+  \bigskip
+}
+\ExplSyntaxOff
+
+\begin{document}
+\input{parts/part_001}
+\input{parts/part_002}
+\input{parts/part_003}
+\input{parts/part_004}
+\input{parts/part_005}
+\input{parts/part_006}
+\input{parts/part_007}
+\input{parts/part_008}
+\end{document}

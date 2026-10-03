@@ -1,0 +1,44 @@
+Springer Nature 2021 LATEX template
+24 Explainable Contextual Anomaly Detection
+T able 4Summary of parameters involved in QCAD. Particularly, V aluerepresents the
+values that we recommend to use in experiments.
+Symbol Meaning V alue
+k number of nearest neighbours min( N/2, 500)
+nq number of conditional quantiles to estimate 100
+nt number of trees used to construct a QRF 100 or 10
+nf number of maximal features used to construct a tree |C|
+ns minimum number of samples to split a node 10
+h number of features used to generate explanations min( |B|, 3)
+such as IForest, LOF, k-NN, SOD, and HBOS, we use their publicly avail-
+able implementations in PyOD (Zhao et al, 2019) with their default settings.
+Unfortunately, for LoPAD, CAD and ROCOD no implementation was pub-
+licly available. For LoPAD, we first use the ‘bnlearn’ package (Scutari et al,
+2019) in R to find the Markov Blankets of each dataset based on Fast-IAMB
+(Yaramakala and Margaritis, 2005). Next, we implement the LoPAD algorithm
+in Python using CART (Breiman et al, 2017) as the prediction model with
+bagging size 200. For CAD, we implement the CAD-GMM-Full algorithm as
+recommended by Song et al (2007), with default settings except for param-
+eter ‘number of Gaussian component’; if this parameter would be set to its
+default 30, it would take more than one month to finish all the experiments
+on our computer. In addition, preliminary experiments show that the differ-
+ence in results when this parameter is set to 30 and 5 respectively is negligible
+for most datasets. We therefore set this parameter to 5 in all experiments.
+We implemented ROCOD in Python with its default settings. One important
+parameter, namely the distance threshold used to find neighbours, is not dis-
+cussed in Liang and Parthasarathy (2016) though. For different datasets and
+distance metrics, it is hard to obtain a single best value for this parameter and
+preliminary experiments revealed that ROCOD is sensitive to this parameter.
+Nevertheless, we also observed that it often achieves relatively good results
+when the distance threshold used to find neighbours is set to 0 .9; hence, we
+decided to set this parameter to 0 .9 by default.
+6.2.1 QCAD Parameters Setting
+As summarised in Table 4, the QCAD algorithm also requires several param-
+eters to be set. First, in our contextual anomaly framework, we need to set
+the number of nearest neighbours ( k) used to generate reference group. Sec-
+ond, when creating quantile regression forests, we need to specify the following
+parameters: the number of trees, the number of maximal features used to con-
+struct a tree, and the number of minimal sample size to split in a node of tree.
+Third, we need to specify the number of conditional quantiles ( l) to estimate
+for an object in each behavioral feature. Last, we also need to set the num-
+ber of features ( h) used to generate explanations. We set these parameters as
+follows.

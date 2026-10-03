@@ -1,0 +1,35 @@
+Springer Nature 2021 LATEX template
+Explainable Contextual Anomaly Detection 35
+Conflict of interest. The author(s) declared no potential conflicts of
+interest with respect to the research, authorship and/or publication of this
+article.
+Availability of data and materials. For reproducibility, all
+code and datasets are provided online via the following link:
+https://github.com/ZhongLIFR/QCAD.
+Authorship Contribution. Zhong Li : Conceptualization, Methodology,
+Validation, Investigation, Writing, Visualisation, Project Administration.
+Matthijs van Leeuwen: Methodology, Validation, Writing, Funding acquisition.
+References
+Aggarwal CC, Sathe S (2017) Outlier ensembles: An introduction. Springer
+Ahmad T, Munir A, Bhatti SH, et al (2017) Survival analysis of heart failure
+patients: A case study. PloS one 12(7):e0181,001
+Ahmed M, Mahmood AN, Hu J (2016a) A survey of network anomaly detection
+techniques. Journal of Network and Computer Applications 60:19–31
+Ahmed M, Mahmood AN, Islam MR (2016b) A survey of anomaly detec-
+tion techniques in financial domain. Future Generation Computer Systems
+55:278–288
+Angiulli F, Pizzuti C (2002) Fast outlier detection in high dimensional
+spaces. In: European conference on principles of data mining and knowledge
+discovery, Springer, pp 15–27
+Babbar S, Chawla S (2012) Mining causal outliers using gaussian bayesian net-
+works. In: 2012 IEEE 24th International Conference on Tools with Artificial
+Intelligence, IEEE, pp 97–104
+Breiman L (2001) Random forests. Machine learning 45:5–32
+Breiman L, Friedman JH, Olshen RA, et al (2017) Classification and regression
+trees. Routledge
+Breunig MM, Kriegel HP, Ng RT, et al (2000) Lof: identifying density-based
+local outliers. In: Proceedings of the 2000 ACM SIGMOD international
+conference on Management of data, pp 93–104
+Buczak AL, Guven E (2015) A survey of data mining and machine learn-
+ing methods for cyber security intrusion detection. IEEE Communications
+surveys & tutorials 18(2):1153–1176

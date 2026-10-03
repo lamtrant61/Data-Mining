@@ -1,0 +1,43 @@
+Springer Nature 2021 LATEX template
+42 Explainable Contextual Anomaly Detection
+behavioral features. This dataset is downloaded from the UCI machine learning
+repository.10 It remains 93935 records after dropping rows containing missing
+values. However, in order for all algorithms to complete the experiment on
+this dataset within 12 hours, we randomly downsample the original dataset to
+20,000 records.
+Energy Efficiency
+This dataset contains 768 records about a study which assesses the energy
+efficiency as a function of building parameters. Accordingly, the building
+parameters such as X1, X2, X3, X4, X5, X6, X7 and X8 are regarded as con-
+textual features, and the heating load and cooling load (namely Y1 and Y2)
+are treated as behavioral features. This dataset is downloaded from UCI, 11
+containing no missing values.
+Fish Weight
+This dataset contains 157 records about the features of common species of fish
+in the market. Accordingly, we use the features including Species, Length1,
+Length2, Length3, Height, Width as contextual features, and Weight as behav-
+ioral feature. This dataset is downloaded from Kaggle,12 containing no missing
+values.
+Forest Fires
+This dataset contains 517 records concerning meteorological and spatiotem-
+poral information about forest fires in the northeast region of Portugal. We
+use the spatiotemporal features such as X, Y, month, day as contextual fea-
+tures, and the rest features, i.e., FFMC, DMC, DC, ISI, temp, RH, wind, rain,
+area as behavioral features. It is downloaded from the UCI machine learning
+repository,13 containing no missing values.
+Gas Turbine CO and NOx Emission
+The original dataset includes 36733 records of sensor measures data, which
+is collected from a gas turbine in Turkey from 2011 to 2015. The dataset is
+collected from the same power plant to study flue gas emissions and predict
+the hourly net energy yield. Consequently, we use the features describing the
+turbine parameters (e.g., AT, AP, AH, AFDP, GTEP, TIT, TAT and CDP) as
+contextual features. The variables characterizing the turbine energy yield and
+emissions of gas (e.g., TEY, CO and NOX) are used as behavioral features.
+However, for all algorithms to complete the experiments within 12 hours, we
+only use the 7383 records in 2015. This dataset is downloaded from UCI, 14
+containing no missing values.
+10archive.ics.uci.edu/ml/datasets/El+Nino
+11https://archive.ics.uci.edu/ml/datasets/Energy+efficiency
+12https://www.kaggle.com/aungpyaeap/fish-market
+13https://archive.ics.uci.edu/ml/datasets/forest+fires
+14https://archive.ics.uci.edu/ml/datasets/Gas+Turbine+CO+and+NOx+Emission+Data+Set

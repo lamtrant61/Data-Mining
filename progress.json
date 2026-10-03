@@ -1,0 +1,70 @@
+{
+  "source_pdf": "../2302.11239v3.pdf",
+  "total_pages": 48,
+  "total_parts": 8,
+  "parts": [
+    {
+      "part": 1,
+      "file": "parts/part_001.tex",
+      "scope": "Trang 1--5: tiêu đề, tóm tắt và Giới thiệu",
+      "status": "completed"
+    },
+    {
+      "part": 2,
+      "file": "parts/part_002.tex",
+      "scope": "Trang 5--8: Công trình liên quan",
+      "status": "completed"
+    },
+    {
+      "part": 3,
+      "file": "parts/part_003.tex",
+      "scope": "Trang 8--12: Phát hiện và giải thích bất thường theo ngữ cảnh",
+      "status": "completed"
+    },
+    {
+      "part": 4,
+      "file": "parts/part_004.tex",
+      "scope": "Trang 12--14: Kiến thức nền",
+      "status": "completed"
+    },
+    {
+      "part": 5,
+      "file": "parts/part_005.tex",
+      "scope": "Trang 14--18: Phương pháp QCAD",
+      "status": "completed"
+    },
+    {
+      "part": 6,
+      "file": "parts/part_006.tex",
+      "scope": "Trang 18--34: Thí nghiệm",
+      "status": "completed"
+    },
+    {
+      "part": 7,
+      "file": "parts/part_007.tex",
+      "scope": "Trang 34--40: Kết luận, tuyên bố và tài liệu tham khảo",
+      "status": "completed"
+    },
+    {
+      "part": 8,
+      "file": "parts/part_008.tex",
+      "scope": "Trang 40--48: Các phụ lục",
+      "status": "completed"
+    }
+  ],
+  "next_part": null,
+  "output_pdf": "main.pdf",
+  "output_pages": 38,
+  "compile_command": "xelatex -interaction=nonstopmode -halt-on-error main.tex",
+  "compile_status": "success",
+  "verification": {
+    "latex_errors": 0,
+    "undefined_citations": 0,
+    "undefined_references": 0,
+    "blank_pages": 0
+  },
+  "issues": [
+    "MiKTeX cảnh báo chưa nạp mẫu ngắt từ tiếng Việt; cảnh báo này không cản trở biên dịch.",
+    "Không tạo DOCX vì môi trường không có Pandoc."
+  ]
+}

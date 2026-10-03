@@ -1,0 +1,44 @@
+Springer Nature 2021 LATEX template
+10 Explainable Contextual Anomaly Detection
+For example, Amsterdam and Rotterdam could form the context of Lei-
+den; they are both nearby and we have measurements for the same season.
+Temperature and wind are similar for all three cities, but there was substan-
+tially more rain in Leiden than in Amsterdam and Rotterdam. Hence, for that
+reason Leiden could be flagged as an anomaly.
+To formalise the problem, we introduce a generic ‘context function’ that
+maps each possible data point to a subset of the dataset, i.e., its context, based
+on the data point’s contextual features.
+Problem 1: Contextual Anomaly Detection Given a dataset X with
+a feature set F = ( C, B), a context function Context : C → Pow(X), an
+anomaly detector Anomaly : B ×Pow(X) → R+, and a threshold ϕ, find all
+data points for which the anomaly scores exceed ϕ and are thereby flagged
+as anomalous—based on the behavioral features—within their individual
+contexts, i.e., {(c, b) ∈ X | Anomaly(b, Context(c)) ≥ ϕ}.
+Note that the context is determined based only on contextual feature val-
+ues, and that the anomaly detector may only use the behavioral feature values
+of the data points in the given context when establishing if the given data
+point is anomalous or not.
+In practice, analysts are not only interested in identifying anomalies, but
+also need to know the underlying reasons for why a specific object is reported
+as anomaly. This leads to the second problem that we consider.
+Problem 2: Contextual Anomaly Explanation Given an anomalous
+object x ∈ X and the context function Context and anomaly detector Anomaly
+that were used to detect it, find the behavioral features B′ ⊆ B for which
+x = (c, b) substantially deviates from Context(c).
+3.2 Overall Approach
+The problem statement in the previous section suggests a three-pronged
+approach based on 1) context generation, 2) anomaly detection, and 3)
+anomaly explanation. In this subsection we explain and illustrate the overall
+approach that we propose, using the running example from Table 1.
+Phase 1: Reference Group Generation
+Many choices are possible for the context function; in this manuscript we
+choose to use an object’s k nearest neighbours, which we refer to as reference
+group. The most important reasons for this choice are that 1) once a global
+contextual distance matrix has been computed the nearest neighbours of any
+object can be found relatively quickly; 2) this approach only requires a distance
+metric to be chosen, which can be defined for any type of data and be adapted
+to the problem at hand; and 3) it is generic enough to allow for different uses
+of the resulting contexts.
+Given a dataset X with contextual feature set C, we first compute the
+distance matrix M between all objects using only the contextual features.
+Second, for any object x ∈ X, we find its k nearest neighbours in contextual

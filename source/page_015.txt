@@ -1,0 +1,44 @@
+Springer Nature 2021 LATEX template
+Explainable Contextual Anomaly Detection 15
+point and its reference group. The algorithm is dubbed QCAD—for Quantile-
+based Contextual Anomaly Detection—and forms the core of our approach; it
+is introduced in Subsection 5.1. Finally, Section 5.2 describes how the found
+anomalies are explained by decomposing the anomaly score in the third phase.
+Algorithm 1 Quantile-based Contextual Anomaly Detection (QCAD)
+Input: Dataset X; contextual feature set C; behavioral feature set B; number
+of behavioral features Q; number of nearest neighbours k; number of con-
+ditional quantiles to estimate nq; number of trees nt; maximum number of
+features used in a tree nf ; minimum number of samples to split a node ns.
+Output: Anomaly score list S
+1: procedure QCAD(X, C, B, k, nq, nt, nf , ns)
+2: S ⇐ {}
+3: for x ∈ X do
+4: R(x, k) ⇐ GetRef erenceGroup(X, C, x, k)
+5: for q ∈ {1, 2, ..., Q} do
+6: QRF ⇐ LearnQRF (R(x, k), C, bq, nq, nt, nf , ns)
+7: s(x|bq) ⇐ AnomalyScore (QRF, C, bq, x)
+8: end for
+9: s(x) = 1
+Q
+PQ
+q=1 s(x|bq)
+10: S.append((x, R(x, k), s(x)))
+11: end for
+12: return S
+13: end procedure
+5.1 Detecting Anomalies with Quantile Regression
+Forests
+Algorithm 1 outlines the QCAD algorithm, which takes a dataset and a number
+of hyperparameters as input and outputs a list of all data points together
+with their reference groups and computed anomaly scores. Specifically, we
+assume that the contextual features can be mixed but all behavioral features
+are numerical. We will first describe the overall algorithm, and then go into
+the specifics of the score computation.
+Algorithm
+After initializing the empty score list (Line 2), the algorithm iterates
+over all data points in dataset X (Ln 3–11). For each object x =
+(c1, ..., cp, ..., cP , b1, ..., bq, ...bQ) = ( c, b) we first obtain the reference group
+that was computed in the first phase (Ln 4). We then iterate over all features
+in behavioral feature set X in order to compute a partial anomaly score for
+each behavioral feature (Ln 5–8). These partial anomaly scores are summed to
+obtain the anomaly score for x (Ln 9), i.e., we assume the behavioral features

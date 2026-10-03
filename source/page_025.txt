@@ -1,0 +1,45 @@
+Springer Nature 2021 LATEX template
+Explainable Contextual Anomaly Detection 25
+• The number of nearest neighbours (k): the sensitivity analysis (see appendix)
+indicates that our approach is robust with respect to this parameter as
+long as its value is not overly small. By default, we set this parameter to
+min(N/2, 500), where N is the sample size.
+• The number of conditional quantiles to estimate ( nq): theoretically, an
+increase in this number will result in better performance in terms of accuracy,
+at the expense of a larger running time. However, preliminary experiments
+show that increasing this number beyond 100 will only produce slightly
+better results. Therefore, we set it to 100 by default.
+• The number of trees used to construct a quantile regression forest ( nt): in
+theory, a larger number of trees will produce better performance in terms
+of accuracy, but at the cost of a larger running time. We empirically found
+that 100 trees usually gives good results and further increasing the number
+of trees leads to negligible improvement. Due to time constraints, we set this
+number to 10 in all experiments in this paper.
+• The number of maximal features used to construct a tree in a quantile
+regression forest ( nf ): Meinshausen (2006) demonstrated the stability of
+quantile regression forest on this parameter, and set this parameter to 1/3 of
+the number of variables in their experiments. However, in our experiments,
+sometimes the number of contextual features is less than 3. To render quan-
+tile regression forests applicable on various datasets, we set this parameter
+to the number of all variables by default.
+• The minimal sample size for the node of a tree to be split ( ns): as indicated
+in Meinshausen (2006), different values of this parameter do not seem to
+have much effect on the results, and our preliminary experiments are also
+in line with this statement. Therefore, we set this number to 10 by default,
+as also used in Meinshausen (2006).
+• The number of features used to generate explanations (h): This parameter is
+set to min(|B|, 3) by default. However, the end-users can set this parameter
+according to their preferences as long as its value is between 0 and|B|, where
+|B| represents the number of behavioral features.
+For reproducibility, we make all code and datasets publicly available 3.
+6.3 Evaluation Criteria
+PRC AUC (Liang and Parthasarathy, 2016; Kuo et al, 2018), ROC AUC
+(Micenkov´ a et al, 2014, 2015; Pasillas-D ´ ıaz and Ratt´ e, 2016), and Precision@n
+(Aggarwal and Sathe, 2017) are widely used for the evaluation and compari-
+son of anomaly detection methods that generate a full list of anomaly scores
+for all observations. They are defined as follows:
+• Receiver Operating Characteristic (ROC), which is obtained by plotting
+the true positive rate (y-axis) versus the false positive rate (x-axis) at var-
+ious threshold settings. The area under this curve, namely ROC AUC, is a
+threshold-agnostic performance measure widely used in anomaly detection;
+3https://github.com/ZhongLIFR/QCAD

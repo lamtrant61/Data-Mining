@@ -1,0 +1,41 @@
+Springer Nature 2021 LATEX template
+34 Explainable Contextual Anomaly Detection
+Matheus Pereira has been exceptionally good at scoring goals and slightly
+better than expected with regard to giving assists.
+These results can be interpreted as: Matheus Pereira performed surprisingly
+well in terms of goals and slightly better than expected in terms of assists
+when compared to other midfielders and/or forwards aged 22-28 who played
+more than 25 games and played more than 2000 minutes. Although we are not
+football experts, we expect the automated detection and interpretable score
+explanation of such ‘anomalies’ to be meaningful and possibly useful to football
+coaches and scouts.
+7 Conclusions
+In this paper, we for the first time explicitly establish a connection between
+dependency-based traditional anomaly detection methods and contextual
+anomaly detection methods. On this basis, we propose a novel approach to
+contextual anomaly detection and explanation. Specifically, we use Quantile
+Regression Forests to develop a accurate and interpretable anomaly detec-
+tion method, QCAD, that explores dependencies between features. QCAD can
+handle tabular datasets with mixed contextual features and numerical behav-
+ioral features. Extensive experiment results on various synthetic and real-world
+datasets demonstrate that QCAD outperforms state-of-the-art anomaly detec-
+tion methods in identifying contextual anomalies in terms of accuracy and
+interpretability.
+From the case study on football player data, we conclude that QCAD can
+detect potentially meaningful and useful contextual anomalies that are directly
+interpretable by a domain expert. The beanplot-based visualisations help to
+explain why a certain object is (not) considered an anomaly within its context.
+This is important because anomaly detection is an unsupervised problem and
+the explanations can help analysts and domain experts to verify the results.
+It also opens up opportunities for human-guided anomaly detection, where
+feedback from the analyst can be used to guide the analysis.
+In the future, given that QCAD can only handle static features, we plan
+to extend QCAD to streaming settings.
+Statement and Declaration
+Ethical approval. The human and animal data involved in this study are
+publicly available, and thus the need for approval was waived.
+F unding. This work is supported by Project 4 of the Digital Twin research
+programme, a TTW Perspectief programme with project number P18-03 that
+is primarily financed by the Dutch Research Council (NWO). All opinions,
+findings, conclusions and recommendations in this paper are those of the
+authors and do not necessarily reflect the views of the funding agencies.

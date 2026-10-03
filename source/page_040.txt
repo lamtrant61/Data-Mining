@@ -1,0 +1,43 @@
+Springer Nature 2021 LATEX template
+40 Explainable Contextual Anomaly Detection
+Zhao Y, Nasrullah Z, Li Z (2019) Pyod: A python toolbox for scalable outlier
+detection. Journal of Machine Learning Research 20:1–7
+Zheng G, Brantley SL, Lauvaux T, et al (2017) Contextual spatial outlier
+detection with metric learning. In: Proceedings of the 23rd ACM SIGKDD
+International Conference on Knowledge Discovery and Data Mining, pp
+2161–2170
+Appendix A Complexity Analysis
+The computational overhead of our QCAD framework mainly comes from two
+parts: the calculation of Gower’s Distance matrix using contextual features,
+and the calculation of anomaly score using all features based on Quantile
+Regression Forests.
+The time complexity of calculating Gower’s Distance matrix isO(N 2Dcnt),
+where N represents the sample size and Dcnt denotes the number of contextual
+features. In addition, the time complexity of constructing a random forest is
+O(ntree · nf eature· klog(k)) and using it for prediction is O(ntree · nf eature)
+(Buczak and Guven, 2015), where ntree is the number of trees used to form
+a random forest, nf eature denotes the number of dimensions (i.e., Dcnt at
+most) and k indicates the number of samples used to construct the forest (i.e.,
+the number of nearest neighbours in our case). Hence, the time complexity
+of constructing N quantile regression forests in Dbhv behavioral features is
+O(ntree · Dcnt · klog(k) · N · Dbhv). Moreover, we have to estimate 100 different
+quantiles using each quantile regression forest, resulting in O((ntree · Dcnt ·
+klog(k) +ntree · Dcnt · 100) · N · Dbhv). Therefore, using our default setting leads
+to O((100 · Dcnt · min(500, N
+2 ) · log(min(500, N
+2 )) + 100· Dcnt · 100) · N · Dbhv).
+In the worst case, it is O(105N DcntDbhv).
+Overall, the time complexity of our method is O(105N DcntDbhv +N 2Dcnt)
+in the worst case. Particularly, the time complexity becomesO(105N DcntDbhv)
+when N <105 (i.e., for small and medium datasets). Besides, the construction
+of quantile regression forests for each object in each behavioral feature can
+easily be performed in a parallel way, thus reducing the time complexity to
+O(105N Dcnt + N 2Dcnt) in the worst case.
+Appendix B Dataset Description
+Abalone
+The dataset contains 4177 abalone physical measurement records. Specifi-
+cally, we use the features Sex, Length, Diameter and Height as contextual
+features. Accordingly, we use the features Whole Weight, Shucked Weight, Vis-
+cera Weight, Shell Weight and Rings as behavioral features. This dataset is
+downloaded from UCI, 5 containing no missing values.
+5https://archive.ics.uci.edu/ml/datasets/abalone

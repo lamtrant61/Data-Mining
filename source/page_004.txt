@@ -1,0 +1,47 @@
+Springer Nature 2021 LATEX template
+4 Explainable Contextual Anomaly Detection
+Contextual anomaly detection assumes that an object is anomalous if it
+strongly deviates from objects within its ‘context’ of similar objects. The appar-
+ent contradiction in this assumption is explained by the division of the features
+into two disjoint subsets, i.e., contextual features and behavioral features. The
+contextual features are only used to define the contexts, using some similarity
+measure, while the behavioral features are only used to determine whether an
+object deviates from other objects within its context. Domain knowledge often
+leads to a natural division between contextual and behavioral features.
+We observe that both contextual and dependency-based anomaly detection
+methods identify anomalies by explicitly or implicitly exploring dependencies
+between features. Concretely, dependency-based anomaly detection methods
+model dependency relationships between all features explicitly, while con-
+textual anomaly detection methods model dependency relationships between
+behavioral and contextual features implicitly or explicitly. As far as we know
+this connection has not yet been pointed out in the literature.
+Approach and contributions.
+In this paper, we introduce an approach for contextual anomaly detec-
+tion and explanation that integrates the core principle of dependency-based
+anomaly detection into contextual anomaly detection to obtain a very accurate
+approach. As is common, we use regression analysis to model dependencies.
+Existing methods for dependency-based and contextual anomaly detection
+that use regression, however, typically only estimate the conditional mean
+of the response variable and directly interpret that as ‘normal’ value. This
+strongly limits how well anomalies can be detected, as the conditional mean
+provides very limited information about the conditional distribution. We there-
+fore use quantile regression, which can model a conditional distribution in
+much more detail by estimating conditional quantiles. Figure 1(c) shows how
+conditional quantiles provide more information about the relationship between
+weight and height than a conditional mean could.
+More specifically, a subset of the features, dubbed contextual features,
+are used to define the context of an object, while the remaining features,
+dubbed behavioral features, are used for detecting deviations within a con-
+text. In this paper we assume that the contextual features can be mixed but
+all behavioral features are numerical. Given this context and our aims, we
+use Quantile Regression Forests (Meinshausen, 2006) to perform predictions
+for each behavioral feature and obtain corresponding uncertainty quantifica-
+tions. By summing the quantified uncertainties (with a wider quantile interval
+representing a higher level of uncertainty) for all individual behavioral fea-
+tures, we obtain the anomaly score for a data instance. By attributing parts of
+the anomaly score to individual behavioral features, the approach intrinsically
+provides explanations in the sense that it can convey to which extent which
+features contributed to making the instance an anomaly. This offers advan-
+tages to post-hoc explanation methods such as SHAP (Lundberg and Lee,
+2017), which we do not consider ‘attributable’ for the following two reasons.
+First, the post-hoc explanation may not match the information/rationale used

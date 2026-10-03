@@ -1,0 +1,69 @@
+Springer Nature 2021 LATEX template
+Explainable Contextual Anomaly Detection 17
+We use conditional percentiles for our anomaly score, because they provide
+a high level of granularity while not requiring very large amounts of data to
+be estimated accurately. As additional benefit, the difference between each
+two consecutive percentiles is always assessed by a weighted combination of a
+comparable number of training data points, i.e., at the cost of some smoothing
+we do not suffer from extremely poor local density estimates in low density
+areas.
+To formally develop our anomaly score, we first define τi to be the ith
+percentile, i.e., τi = Qi/100, ∀i ∈ [0, 100]. For any percentile interval, i.e., an
+interval [τi, τi+1] defined by two consecutive percentiles i and i + 1, we have
+by definition that it spans exactly 0.01 probability (see Figure 3(b)). We could
+estimate the local density of a percentile interval and use that for our anomaly
+score, but we aim for a score that becomes larger when a data point is deemed
+to be more anomalousness.
+To this end we define percentile interval width wi as the difference between
+two consecutive percentiles i and i+1, i.e., τi+1−τi. As such, interval width can
+be regarded as ‘inverse density’, meaning that width will increase as the local
+density decreases. For example, in Figure 3(b) we have τ46 = 0 .5 and τ47 =
+0.513, which gives w46 = 0 .013. Data points that fall in percentile intervals
+having relatively large widths are more likely to be contextual anomalies, as
+they reside in low-density areas of the conditional distribution.
+The basic idea is thus to define the anomaly score for an object x and
+behavioral feature bq as w(x|bq), i.e., the width of the (QRF-predicted) per-
+centile interval in which the behavioral value of the data point falls. We need
+to consider a special case though: the actual behavioral feature value bq may
+be less than the smallest estimated conditional quantile, i.e., τ q
+0 , or greater
+than the largest estimated conditional quantile, i.e., τ q
+100. That is, the actual
+value may not fall in any estimated conditional percentile interval. To address
+this we extrapolate beyond τ q
+0 and τ q
+100, leading to intermediate anomaly score
+is(x|bq) =
+
+
+
+
+1 + τ q
+0 − bq
+τ q
+75 − τ q
+25
+
+max(w(x|bq)), if bq < τq
+0 ;
+
+1 + bq − τ q
+100
+τ q
+75 − τ q
+25
+
+max(w(x|bq)), if bq > τq
+100,
+w(x|bq), otherwise,
+(4)
+where max(w(x|bq)) represents the maximum interval width of all conditional
+percentile intervals for the behavioral feature bq.
+Unfortunately, directly using Equation (4) as partial anomaly score would
+make our approach prone to the so-called dictator effect : summing such
+partial scores for a data point that strongly deviates in only a few behavioral
+features would lead to a larger anomaly score than anomalous data points
+deviating moderately in many behavioral features. As a result, data points
+with few, strong deviations would ‘dictate’ highest scores; this is undesirable.
+To avoid the dictator effect, we truncate the partial anomaly scores to a
+predefined maximum and arrive at the final partial anomaly score as

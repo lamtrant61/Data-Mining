@@ -1,0 +1,46 @@
+Springer Nature 2021 LATEX template
+2 Explainable Contextual Anomaly Detection
+1 Introduction
+According to the well-known definition of Hawkins (1980), an anomaly 1 is an
+object that is notably different from most remaining objects. Chandola et al
+(2009) subdivided anomalies into three types: point anomalies (an object is
+considered anomalous when compared against the rest of objects), contextual
+anomalies (an object is anomalous in a specific context), and collective anoma-
+lies (a collection of objects is anomalous with respect to the entire dataset).
+The analysis of anomalies has a wide range of applications, such as in net-
+work security (Ahmed et al, 2016a), bioinformatics (Spinosa and Carvalho,
+2005), fraud detection (Ahmed et al, 2016b), and fault detection and isolation
+(Hwang et al, 2009).
+Anomaly analysis consists of two equally important tasks: anomaly detec-
+tion and anomaly explanation. A wealth of ‘shallow’ machine learning based
+methods, i.e., not based on deep learning, have been proposed to detect anoma-
+lies (Chandola et al, 2009). More recently, many deep learning based anomaly
+detection methods have also been developed (Pang et al, 2021). However,
+deep learning based anomaly detection methods are notoriously known as
+not being interpretable, in the sense that generally both the model itself is
+non-transparent and the resulting anomaly scores are challenging to interpret
+without the use of a post-hoc explainer. In this paper it is especially the lat-
+ter that we consider to be problematic, as post-hoc explanations often rely
+not only on the model but also on the specific explainer used. In addition,
+deep learning methods typically require large amounts of data and training the
+models is a time-consuming process. In many real-world applications, however,
+‘native’ interpretability (i.e., without posthoc explainer) may be required, and
+limited data and/or computation time may be available. For these reasons, in
+this paper we restrict our focus to ‘shallow’ machine learning based methods.
+In correspondence with this choice, we focus on settings where the amount
+of data is smaller than is typically required to learn accurate deep models.
+Most existing shallow methods only consider point anomaly detection, largely
+ignoring contextual anomaly detection. Moreover, anomaly explanation has
+received very limited attention. In this paper, we address both the problem of
+contextual anomaly detection and that of anomaly explanation, for small to
+moderately sized tabular data having categorical and/or quantitative features.
+Shallow anomaly detectors are typically categorised into distance-based,
+density-based, and distribution-based approaches (Wang et al, 2019). Distance-
+based and density-based methods use knowledge about the spatial proximity of
+objects to identify anomalies, while distribution-based methods use knowledge
+about the distribution of the data to detect anomalies. These methods work
+under the assumption that objects having a large distance or different density
+from their spatial neighbours are anomalous or objects that take rare values
+under a marginal or joint distribution of features are anomalous , respectively.
+1Given the fact that “outlier” is often used as a synonym for “anomaly” in the anomaly detection
+literature, we will use them interchangeably in this paper.

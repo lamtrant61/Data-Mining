@@ -1,0 +1,44 @@
+Springer Nature 2021 LATEX template
+Explainable Contextual Anomaly Detection 5
+by the model to detect an anomaly (Li et al, 2022). Second, it has recently
+been shown (Fokkema et al, 2022) that attribute-based explanations cannot
+be both recourse sensitive and robust, which is a good reason to avoid such
+explainers when possible and use a ‘native’ attribution-based method instead.
+As far as we are aware, we are the first to use quantile regression for
+dependency-based or contextual anomaly detection. Specifically, we choose to
+employ Quantile Regression Forests for three reasons. First, it can model both
+linear and non-linear dependency between features. Second, in the paper that
+introduced the method it was empirically shown to outperform other condi-
+tional quantile estimators in most cases. Figure 1(d) shows how the estimated
+conditional quantiles can be used to approximate the conditional probability
+density at different locations, which we can use to accurately detect anoma-
+lies. Moreover, the quantiles are helpful to explain why an object is considered
+an anomaly without having to explicitly refer to other objects.
+The main contributions of our work can be summarized as follows: (1) We
+identify a connection between dependency-based traditional anomaly detec-
+tion methods and contextual anomaly detection methods, and exploit this
+observation to introduce a novel high-level approach to contextual anomaly
+detection and explanation; (2) We instantiate this generic approach using
+quantile regression (and Quantile Regression Forests specifically) for anomaly
+detection and a beanplot-based visualization for anomaly explanation; and
+(3) We perform extensive experiments on synthetic and real-world datasets to
+empirically demonstrate the effectiveness, and interpretability of the proposed
+method when compared to state-of-the-art methods.
+The remainder of this paper is organized as follows. Section 2 discusses
+related work, both in contextual and traditional anomaly detection. Section
+3 introduces notation, formalizes the problem, and presents the high-level
+approach that we propose. Section 4 then describes some technical preliminar-
+ies, most notably Quantile Regression Forests. Section 5 introduces QCAD,
+our proposed method for Quantile-based Contextual Anomaly Detection and
+Explanation that instantiates the high-level approach. Section 6 empirically
+compares QCAD to its competitors, and provides a case study that investi-
+gates the use of QCAD to find exceptional football players from data. Section
+7 concludes the paper.
+2 Related work
+We first discuss related work on contextual anomaly detection and explana-
+tion, and then proceed with the two most closely related types of traditional
+anomaly detection: dependency-based and subspace-based anomaly detection.
+2.1 Contextual Anomaly Detection and Explanation
+Contextual anomaly detection has received particular attention in spatial data
+(Cai et al, 2013), temporal data (Salvador et al, 2004), and spatio-temporal
+data (Smets et al, 2009), where spatial and/or temporal features are used to

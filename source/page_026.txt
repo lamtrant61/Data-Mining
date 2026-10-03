@@ -1,0 +1,46 @@
+Springer Nature 2021 LATEX template
+26 Explainable Contextual Anomaly Detection
+• Precision-Recall Curve (PRC), which is created by plotting precision (y-
+axis) against recall (x-axis) at various threshold settings. The area under
+this curve, namely PRC AUC, is another widely-used, threshold-agnostic
+performance measure, and is also called Average Precision;
+• Precision at n, or P@n, is defined as the precision of the observations ranked
+among the top- n, where n ∈ {1, 2, ..., N}. In our experiments, we set n to
+the number of injected contextual anomalies.
+For completeness: precision is defined as #{Real anomalies}∩{Reported anomalies }
+#{Reported anomalies } ,
+while recall is defined as #{Real anomalies}∩{Reported anomalies }
+#{Real anomalies} . We perform ten
+independent trials of injecting contextual anomalies on each dataset and report
+the means and standard deviations of each of the three evaluation criteria.
+6.4 Anomaly Detection Performance
+Results on 10 synthetic datasets and 20 real-world datasets are presented in
+Tables 5, 6, and 7, where the first table concerns synthetic data, and the latter
+two tables concern real-world data.
+From Table 5, we observe that QCAD generally dominates other meth-
+ods in terms of anomaly detection accuracy according to the average ranks.
+More specifically, QCAD achieved the best results on 9 out of 10 synthetic
+datasets in terms of PRC AUC and ROC AUC, and on all datasets in terms of
+Precision@n. On Syn8, QCAD is on par with its best competitor (i.e., CAD) in
+terms of ROC AUC, whereas QCAD is slightly worse than CAD and ROCOD
+in terms of PRC AUC. This demonstrates the effectiveness of QCAD in iden-
+tifying contextual anomalies for different forms and degrees of dependencies
+between the behavioral features and contextual features. More importantly,
+the poor performance of LoPAD indicates the importance of distinguishing
+behavioral features from contextual features. Additionally, other traditional
+anomaly detectors—including IForest, LOF,k-NN, SOD, and HBOS—perform
+poorly on most datasets because they treat all features equally.
+Another important observation is that QCAD is generally superior to other
+methods in terms of robustness. That is, QCAD attains high PRC AUC, ROC
+AUC, and Precision@n values with small standard deviations on Syn1, Syn2,
+Syn3, Syn4 and Syn5, indicating that it is robust to different forms and degrees
+of dependency relationships, including linearity and non-linearity. In contrast,
+its strongest contender, CAD, has high standard deviations on Syn1 and Syn6.
+One possible reason is that CAD gets trapped in a bad local minimum when
+using expectation-maximization algorithm to learn parameters. Despite being
+a contextual anomaly detector, ROCOD performs poorly on datasets Syn2 and
+Syn5 in terms of PRC AUC and Precision@n. From the results on Syn6, Syn7,
+Syn8, Syn9 and Syn10, it appears that a larger number of contextual features
+does not substantially affect the performance of QCAD. Compared to other
+contextual anomaly detectors, and specifically CAD, QCAD does not perform
+particularly better on these synthetic datasets.

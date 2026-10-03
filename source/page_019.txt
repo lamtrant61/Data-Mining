@@ -1,0 +1,36 @@
+Springer Nature 2021 LATEX template
+Explainable Contextual Anomaly Detection 19
+0.2
+0.4
+0.6
+0.8behavioral feature
+actual value
+Q3
+Median
+Q1
+Fig. 4 Anomaly beanplot giving insight in what the quantile regression forest learned for a
+particular data point and behavioral feature, and why the data point is (not) considered an
+anomaly. The short blue lines indicate the conditional percentiles τ0, τ1, . . . , τ100 as learned
+by the QRF (top to bottom), for the given data point and behavioral feature. As in a box
+plot, the (cyan) box indicates first quartile ( τ25), median ( τ50), and third quartile ( τ75).
+The wider red area represents probability densities as estimated based on the conditional
+percentiles. Finally, the black line indicates the actual value that the data point has.
+In addition, we demonstrate the robustness of QCAD with regard to the
+‘number of nearest neighbours’ hyperparameter by means of a sensitivity anal-
+ysis, and conduct several ablation studies to investigate the impact of the
+hyperparameters. For reasons of space and brevity, the sensitivity analysis and
+ablation studies are given in Appendices C and D.
+6.1 Data
+It is challenging to evaluate unsupervised anomaly detection algorithms due
+to the lack of commonly agreed-upon benchmark data, and down-sampling
+classification datasets has been criticized for its variation in the nature of the
+resulting outliers (F¨ arber et al, 2010; Campos et al, 2016).
+When evaluating unsupervised contextual anomaly detection algorithms,
+this problem is further compounded by the requirement to have both con-
+textual and behavioral features, and—more importantly—treating those dif-
+ferently (Liang and Parthasarathy, 2016). Consequently, a generally accepted
+approach is to artificially inject contextual anomalies into existing datasets
+using a perturbation scheme.
+6.1.1 Data Preprocessing
+To make the datasets suitable to all anomaly detection methods, we need to
+preprocess them before injecting contextual anomalies. First, we leverage Label

@@ -1,0 +1,11 @@
+Springer Nature 2021 LATEX template
+48 Explainable Contextual Anomaly Detection
+ 
+ 
+Fig. D3 Effects of clipping matched conditional quantile interval length. For each dataset,
+the results are obtained by performing 5 independent trials (represented by 5 different
+curves) of injecting contextual anomalies. Then we compute the performance metrics (i.e.,
+PRC AUC, ROC AUC, and Precision@n) of QCAD by varying the hyper-parameter η
+in {0.1, 0.2, 0.5, 1, 2, 3, ...,11, 12, 15, 20, 30, 40, N one}, where None means no clipping is per-
+formed. On most datasets, the best performances are achieved when 3 < η <10, as shown
+by the two vertical red lines.

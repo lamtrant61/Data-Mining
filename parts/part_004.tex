@@ -1,0 +1,42 @@
+\section{Vòng sơ loại}
+\label{sec:prelim}
+
+Trước tiên, chúng tôi xác định giá trị trung bình có điều kiện và phân vị có điều kiện mà chúng tôi sử dụng để thúc đẩy việc sử dụng phân vị có điều kiện để phát hiện sự bất thường. Tiếp theo, chúng tôi trình bày chi tiết về các khu rừng hồi quy phân vị, một lớp mô hình có thể ước tính mạnh mẽ các phân vị có điều kiện. Độc giả quen thuộc với những khái niệm này có thể bỏ qua phần này.
+
+
+\subsection{Từ trung bình có điều kiện đến phân vị có điều kiện}
+\label{subsec:meantoquantiles}
+
+Cho một biến $V$ có giá trị thực và một tập hợp các biến $\mathbf{U}$, phân tích hồi quy nhằm mục đích lập mô hình phân phối $V$ dựa trên $\mathbf{U}$. Cụ thể, phải lấy $V$ làm biến phản hồi và $\mathbf{U}$ làm biến dự đoán để xây dựng một mô hình có thể dùng để dự đoán $V$ dựa trên $\mathbf{U}$.
+Hồi quy tiêu chuẩn sử dụng dữ liệu huấn luyện $\{(\mathbf{U}_{1},V_{1}),...,(\mathbf{U}_{n},V_{n})\}$ để tìm hiểu mô hình ước tính giá trị trung bình có điều kiện $E(V \mid \mathbf{U}=\mathbf{u})$ và sử dụng dữ liệu đó làm dự đoán cho $V$ khi $\mathbf{U}=\mathbf{u}$ được đưa ra. Ví dụ: Hồi quy bình phương tối thiểu phù hợp với mô hình $\hat{\theta}$ bằng cách giảm thiểu tổn thất lỗi bình phương dự kiến, cụ thể là $\hat{\theta} =  \underset{\theta}{\mathrm{argmin}}\, E\{(V-\hat{V}(\theta))^{2})\mid \mathbf{U}=\mathbf{u}\}$.
+
+Tuy nhiên, giá trị trung bình có điều kiện chỉ là một thống kê duy nhất của phân bố có điều kiện và do đó bị giới hạn về những gì nó có thể nắm bắt được. Ví dụ: nếu phân phối có điều kiện là phân phối đa phương thức thì giá trị trung bình không đủ để mô tả nó (bất kể chúng ta có xem xét độ lệch chuẩn hay không).
+
+Để cho phép mô tả toàn diện hơn về phân bố có điều kiện, \cite{koenker2001quantile} đã đề xuất ước tính \emph{phân vị có điều kiện}. Như thường lệ, lượng tử là các điểm phân chia phạm vi phân bố xác suất thành các khoảng liên tiếp có xác suất bằng nhau. Cho một biến liên tục $V$, phân vị $\alpha$ có điều kiện của nó cho $\mathbf{U}=\mathbf{u}$ được xác định bởi $Q_{\alpha}(\mathbf{u}) = \inf \{v: F(v \mid \mathbf{U}=\mathbf{u}) \geq \alpha\}$, trong đó $F(v \mid \mathbf{U}=\mathbf{u}) = P(V \leq v \mid \mathbf{U}=\mathbf{u})$ là hàm phân phối tích lũy. Các phân vị có điều kiện có khả năng mô tả phân bố có điều kiện đầy đủ của biến phản hồi $V$.
+
+Các phương pháp phát hiện điểm bất thường dựa trên hồi quy hiện tại thường ước tính giá trị trung bình có điều kiện của $V$ bằng giá trị kỳ vọng $\hat{v}$, sau đó sử dụng khoảng cách Euclide giữa giá trị thực của nó và giá trị kỳ vọng, tức là $dist(v,\hat{v})$, làm điểm bất thường. Tuy nhiên, thật khó để giải thích khoảng cách này vì hình dạng và phạm vi của phân bố có điều kiện vẫn chưa được biết. Trong bài viết này, chúng tôi giải quyết vấn đề này bằng cách ước tính các phân vị có điều kiện. Cụ thể, chúng tôi sẽ chỉ ra rằng chúng tôi có thể sử dụng các phân vị có điều kiện để ước tính xác suất quan sát được một điểm dữ liệu nhất định trong ngữ cảnh của nó, sau đó xác suất này được sử dụng cho điểm bất thường.
+
+\subsection{Rừng hồi quy phân vị}
+\label{subsec:QRF}Các phương pháp hồi quy dựa trên cây---chẳng hạn như CART, M5 và Rừng ngẫu nhiên---thường được sử dụng để tìm hiểu cả sự phụ thuộc tuyến tính và phi tuyến tính. \cite{meinshausen2006quantile} đã mở rộng Rừng ngẫu nhiên thành Rừng hồi quy phân vị, ước tính và dự đoán các phân vị có điều kiện thay vì phương tiện.
+
+Cụ thể, một khu rừng hồi quy phân vị (QRF) được xây dựng bằng cách xây dựng một tập hợp các cây quyết định độc lập $K$ để ước tính hàm phân phối tích lũy có điều kiện đầy đủ của $V$ cho $\mathbf{U} = \mathbf{u}$, dựa trên các quan sát độc lập $n$ $\{(\mathbf{U}_{1},V_{1}),...,(\mathbf{U}_{i},V_{i}),...,(\mathbf{U}_{n},V_{n})\}$. Mỗi $\mathbf{U}_{i}$ bao gồm các kích thước $d$. Phân phối có điều kiện đầy đủ ước tính có thể được viết là
+\begin{equation}
+\hat{F}(v \vert \mathbf{U}=\mathbf{u}) = \hat{P}(V \leq v \vert \mathbf{U}=\mathbf{u}) = \hat{E}( \mathbb{I}(V \leq v) \vert \mathbf{U}=\mathbf{u}) = \sum_{i=1}^{n}\omega_{i}(\mathbf{u})\mathbb{I}(V_i \leq v),
+\label{eq1}
+\end{equation}
+trong đó $\omega_{i}(\mathbf{u})$ biểu thị trọng số được gán cho quan sát $(\mathbf{U}_{i},V_{i})$.
+
+Các cây quyết định tạo nên một khu rừng hồi quy phân vị được xây dựng tương tự như cách học một khu rừng ngẫu nhiên, tức là đối với mỗi cây riêng lẻ, các điểm dữ liệu $m \leq n$ được lấy mẫu (có thay thế), các tính năng $d^{'} \ll d$ được chọn ngẫu nhiên và một tiêu chí như thu thập thông tin được sử dụng để phân chia đệ quy dữ liệu và cây. Tuy nhiên, mỗi nút lá vẫn giữ tất cả các quan sát của nó. Cây quyết định $K$, cụ thể là $T_{1}(\theta),...,T_{K}(\theta)$, được trồng độc lập để tạo thành một khu rừng.
+
+Khi rừng đã được xây dựng, đối với một $\mathbf{U} = \mathbf{u}$ nhất định, mỗi cây quyết định $T_{j}(\theta)$ sẽ được duyệt qua để tìm nút lá mà $\mathbf{u}$ cư trú. Sau đó, trọng số $\omega_{i}(\mathbf{u},T_{j}(\theta))$ sẽ được tính toán
+đối với mỗi quan sát $\mathbf{U}_{i}$, với $i \in \{1,...,n\}$: nếu quan sát $\mathbf{U}_{i}$ và $\mathbf{u}$ nằm trong cùng một nút lá thì $\omega_{i}(\mathbf{u},T_{j}(\theta))$ được xác định là 1 chia cho số lượng mẫu nằm trong nút lá. Ngược lại, $\omega_{i}(\mathbf{u},T_{j}(\theta))$ là $0$. Tiếp theo, nó lấy giá trị trung bình của $\omega_{i}(\mathbf{u},T_{j}(\theta))$ trên tất cả các cây quyết định, tức là
+\begin{equation}
+\omega_{i}(\mathbf{u}) = \frac{1}{K} \sum_{j=1}^{K}\omega_{i}(\mathbf{u},T_{j}(\theta)),
+\label{eq2}
+\end{equation}
+là trọng số được gán cho quan sát $\mathbf{U}_{i}$. Cuối cùng, phân vị có điều kiện $Q_{\alpha}(\mathbf{u}) = \inf \{v: F(v \mid \mathbf{U}=\mathbf{u}) \geq \alpha\}$ có thể được ước tính bằng $\hat{Q}_{\alpha}(\mathbf{u}) = \inf \{v: \hat{F}(v \mid \mathbf{U}=\mathbf{u}) \geq \alpha\}$. Theo các giả định hợp lý, \cite{meinshausen2006quantile} đã chứng minh rừng hồi quy phân vị là nhất quán, tức là
+\begin{equation}
+\sup\abs{\hat{F}(v \mid \mathbf{U}=\mathbf{u}) - F(v \mid \mathbf{U}=\mathbf{u})} \stackrel{p}\longrightarrow 0, \textrm{khi } n \longrightarrow \infty
+\label{eq3}
+\end{equation}
+giữ theo từng điểm đối với mọi $\mathbf{u}$.

@@ -1,0 +1,36 @@
+Springer Nature 2021 LATEX template
+36 Explainable Contextual Anomaly Detection
+Cabero I, Epifanio I, Pi´ erola A, et al (2021) Archetype analysis: A new
+subspace outlier detection approach. Knowledge-Based Systems 217:106,830
+Cai Q, He H, Man H (2013) Spatial outlier detection based on iterative self-
+organizing learning model. Neurocomputing 117:161–172
+Calikus E, Nowaczyk S, Bouguelia MR, et al (2021) Wisdom of the contexts:
+Active ensemble learning for contextual anomaly detection. arXiv preprint
+arXiv:210111560
+Campos GO, Zimek A, Sander J, et al (2016) On the evaluation of unsupervised
+outlier detection: measures, datasets, and an empirical study. Data mining
+and knowledge discovery 30(4):891–927
+Chandola V, Banerjee A, Kumar V (2009) Anomaly detection: A survey. ACM
+computing surveys (CSUR) 41(3):1–58
+F¨ arber I, G¨ unnemann S, Kriegel HP, et al (2010) On using class-labels in
+evaluation of clusterings. In: MultiClust: 1st international workshop on dis-
+covering, summarizing and using multiple clusterings held in conjunction
+with KDD, p 1
+Fokkema H, de Heide R, van Erven T (2022) Attribution-based explanations
+that provide recourse cannot be robust. arXiv preprint arXiv:220515834
+Friedman M (1937) The use of ranks to avoid the assumption of normal-
+ity implicit in the analysis of variance. Journal of the american statistical
+association 32(200):675–701
+Goldstein M, Dengel A (2012) Histogram-based outlier score (hbos): A fast
+unsupervised anomaly detection algorithm. KI-2012: Poster and Demo Track
+pp 59–63
+Gower JC (1971) A general coefficient of similarity and some of its properties.
+Biometrics pp 857–871
+Harrison Jr D, Rubinfeld DL (1978) Hedonic housing prices and the demand for
+clean air. Journal of environmental economics and management 5(1):81–102
+Hawkins DM (1980) Identification of outliers, vol 11. Springer
+Hayes MA, Capretz MA (2014) Contextual anomaly detection in big sensor
+data. In: 2014 IEEE International Congress on Big Data, IEEE, pp 64–71
+Hong C, Hauskrecht M (2015) Multivariate conditional anomaly detection and
+its clinical application. In: Proceedings of the AAAI Conference on Artificial
+Intelligence

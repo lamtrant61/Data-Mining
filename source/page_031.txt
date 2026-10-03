@@ -1,0 +1,69 @@
+Springer Nature 2021 LATEX template
+Explainable Contextual Anomaly Detection 31
+PRC AUC and Precision@n lower than 0.10, which is extremely poor. This
+implies that traditional anomaly detection methods are not suitable for identi-
+fying contextual anomalies, as they treat all features equally. Furthermore, the
+relatively poor performance of ROCOD and CAD—compared to our method—
+demonstrates the importance of modelling more properties of the conditional
+distribution than just the mean.
+6.5 Runtime Analysis
+0 500 1000 1500 2000 2500 3000
+0
+500
+1000
+1500
+Runtime of QCAD (sec)
+#C=3, #B=2
+0 25 50 75 100 125 150 175 200
+250
+300
+350
+400
+450
+N=500, #B=2
+0 15 30 45 60 75 90 105 120 135
+0
+5000
+10000
+15000
+N=500, #C=5
+0 500 1000 1500 2000 2500 3000
+Sample Size
+0
+5000
+10000
+15000
+20000Runtime of CAD (sec)
+0 25 50 75 100 125 150 175 200
+Contextual Feature Size
+2000
+4000
+6000
+8000
+0 15 30 45 60 75 90 105 120 135
+Behavioural Feature Size
+1000
+1500
+2000
+2500
+Fig. 6 Runtime analysis by varying the sample size, the number of contextual features
+(#C), and the number of behavioral features (# B). The results are obtained with 5 inde-
+pendent trials. The data was synthesized using scheme S1. Note the varying y-axis scales.
+To investigate the scalability and efficiency of QCAD, we perform a run-
+time analysis by varying the sample size, the number of contextual features,
+and the number of behavioral features. As shown in Figure 6, we can empir-
+ically observe that the runtime of QCAD scales linearly with respect to the
+sample size, the number of contextual features, and the number of behavioral
+features on small and medium datasets. In contrast, CAD is computationally
+prohibitively expensive even on small datasets. To further understand the com-
+plexity of QCAD, we perform a time complexity analysis in Appendix A. The
+theoretical analysis is in line with our empirical results and analysis.
+6.6 Using QCAD to Find Promising Football Players
+In this section, we illustrate the capability of QCAD on identifying potentially
+meaningful contextual anomalies and providing intuitive and understandable
+explanations for reported anomalies when applied to a real-world problem.
+As use case, we consider the problem of finding exceptional players in the
+English Premier League. The dataset 4 describes the background information
+and performance statistics of 532 football players from 2020 to 2021. We use
+the variables Position1,Position2 (positions for which the player plays), Age
+4https://www.kaggle.com/rajatrc1705/english-premier-league202021

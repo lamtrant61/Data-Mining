@@ -1,0 +1,43 @@
+Springer Nature 2021 LATEX template
+30 Explainable Contextual Anomaly Detection
+The results on real-world datasets presented in Tables 6 and 7 show that
+QCAD performs best overall when compared to its contenders, as witnessed by
+its average ranking results. Concretely, QCAD outperforms the other methods
+on 13 out of 20 real-world datasets in terms of PRC AUC and ROC AUC, and
+on 11 out of 20 datasets in terms of P@n. On most of the remaining datasets,
+QCAD is on par with its strongest competitors. For instance, HBOS achieves
+the best performance on Forest Fires, Heart Failures, Hepatitis, and Indian
+Liver Patient; QCAD’s performance on these datasets is comparable. The
+number of contextual features in these datasets is often substantially less than
+the number of behavioral features, reducing the contextual anomaly detection
+problem to a traditional anomaly detection problem. QCAD is only slightly
+worse than ROCOD on Power Plant and Toxicity in terms of PRC AUC. Note
+that CAD produces surprisingly good results on the Bodyfat dataset, and sur-
+passes other methods including QCAD. One possible explanation is that the
+contexts and behaviors are both composed of well-separated Gaussian compo-
+nents, and that the association between contextual and behavioral components
+is strong.
+PRC AUC ROC AUC Precision@n
+Fig. 5 Critical difference diagram showing statistical difference comparisons between
+QCAD and its contenders in terms of PRC AUC, ROC AUC and Precision@n. To achieve
+this, we use Friedman tests (Friedman, 1937) followed by Nemenyi post hoc analysis
+(Nemenyi, 1963) with a significance level of 0.05. The post-hoc Nemenyi test indicates there
+are no significant differences within QCAD, CAD and ROCOD in terms of PRC AUC; there
+are no significant differences within QCAD, ROCOD, HBOS and IForest in terms of ROC
+AUC; there are no significant differences within QCAD, ROCOD, HBOS and CAD in terms
+of Precision@n. However, one can see that QCAD consistently outperforms its contenders
+by a large margin in three metrics.
+We also observe that QCAD performs well on datasets with varying sam-
+ple size, dimensionality, and rate of injected anomalies. Specifically, QCAD
+achieved a high ROC AUC ( ≥ 0.85) on all datasets. This is much better than
+the ROC AUC values close to 0 .50 obtained by ROCOD, CAD, HBOS, and
+IForest on some datasets, implying they are random guessing. In addition,
+QCAD attained high PRC AUC ( ≥ 0.8) and Precision@n values ( ≥ 0.7) on
+most datasets. The lowest PRC AUC and Precision@n value are is 0.46 and
+0.49, respectively, both obtained on the Toxicity dataset. Possible reasons for
+QCAD’s moderate performance on Airfoil, BodyFat, Power plant, and Toxicity
+are: the dependency relationship between behavioral features and contextual
+features is not strong, or the dependency relationship is too complex for the
+Quantile Regression Forests to capture. ROCOD, COD, HBOS, and IForest,
+however, obtain PRC AUC values less than 0.70 and Precision@n values less
+than 0.60 on most datasets. Moreover, HBOS and IForest sometimes attain

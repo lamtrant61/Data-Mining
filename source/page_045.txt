@@ -1,0 +1,44 @@
+Springer Nature 2021 LATEX template
+Explainable Contextual Anomaly Detection 45
+describes the excitation current of synchronous machine (namely If ) is used
+as behavioral feature. This dataset is downloaded from UCI, 23 containing no
+missing values.
+Yacht Hydrodynamics
+This dataset contains 308 records about the features of sailing yachts. We
+use the features describing the dimensions, velocity and hydrodynamic
+performance of yachts, namely Longitudinal position, Prismatic coefficient,
+Length displacement ratio, Beam draught ratio, Length beam ratio,
+Froude number as contextual features, and the feature concerning the
+residuary resistance per unit weight of displacement, namely resistance, as
+behavioral feature. This dataset is downloaded from the UCI machine learning
+repository, 24 containing no missing values.
+Appendix C Parameter Sensitivity Analysis
+The parameter k directly affects the effectiveness and efficiency of anomaly
+detector in anomaly detection phase. If our dataset is labelled, we can use
+techniques like grid-search and cross-validation to set an optimal k for a
+specific dataset. However, anomaly detection is usually an unsupervised learn-
+ing problem, which makes it impossible to set an optimal k. Hence, we can
+only empirically give some rules of thumb to set k according to the proper-
+ties of specific dataset (i.e., sample size, dimensionality and estimated rate of
+anomaly). Therefore, we perform intensive experiments on synthetic and real-
+world datasets with a wide range of sample sizes, dimensionalities and rates
+of injected anomalies to investigate the sensitivity of our algorithm on this
+parameter.
+As shown in Figure C1, increasing the number of neighbours, i.e., k, will
+lead to a better performance in terms of PRC AUC, ROC AUC and Pre-
+cision@n when k is small (about N/10 for most datasets). However, the
+performance gain gradually slows down as k increases, and the performance
+finally reaches a plateau with an increase of k. After that, further increasing k
+yields only a negligible performance gain, at the cost of runtime. Therefore, we
+set k to N/2 for small dataset and 500 for medium dataset after taking a trade-
+off between the accuracy and runtime cost. Overall, different from other k-NN
+based anomaly detectors which are sensitive to this parameter, our method
+QCAD is stable on parameter k as long as its value is not too small.
+Appendix D Ablation Study
+D.1 Scaling Conditional Quantile Interval Length
+In our method section, we have defined a matched conditional quantile inter-
+val length for an observation bq when bq > τq
+100 or bq < τq
+0 as in Equation
+23https://archive.ics.uci.edu/ml/datasets/Synchronous+Machine+Data+Set
+24archive.ics.uci.edu/ml/datasets/Yacht+Hydrodynamics

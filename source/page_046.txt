@@ -1,0 +1,96 @@
+Springer Nature 2021 LATEX template
+46 Explainable Contextual Anomaly Detection
+0 250 500 750 1000 1250 1500
+0.4
+0.5
+0.6
+0.7
+0.8
+0.9Performance Metrics
+Air Foil
+0 200 400 600
+0.70
+0.75
+0.80
+0.85
+0.90
+0.95
+1.00
+Energy
+0 200 400 600 800 1000
+0.5
+0.6
+0.7
+0.8
+0.9
+Concrete
+PRC ROC Mean & Std
+ROC ROC Mean & Std
+P@n Mean & Std
+0 100 200 300 400 500
+Number of Neighbours
+0.5
+0.6
+0.7
+0.8
+0.9
+1.0Performance Metrics
+Synchronous Machine
+0 200 400 600 800
+Number of Neighbours
+0.5
+0.6
+0.7
+0.8
+0.9Performance Metrics
+Toxicity
+50 100 150 200 250 300
+Number of Neighbours
+0.4
+0.5
+0.6
+0.7
+0.8
+0.9
+1.0
+Yacht
+PRC ROC Mean & Std
+ROC ROC Mean & Std
+P@n Mean & Std
+Fig. C1 Sensitivity analysis on parameter k, where lines represent the mean values and the
+shaded areas indicate the corresponding standard deviations of each metric on 10 indepen-
+dent trials. Increasing the number of neighbours will first largely improve the performance
+in terms of PRC AUC (green line with asterisks), ROC AUC (red line with squares) and
+Precision@n (blue line with diamonds), and then yields negligible performance gains.
+(4). We define the matched interval length for bq based on max( w(x|bq)) and
+further scale it by considering its distance to τ q
+100 or τ q
+0 . Alternatively, we can
+simply define the matched interval length as max( w(x|bq)) without scaling
+it. In other words, we could treat all observations residing outside [ τ q
+0 , τq
+100]
+equally. However, as shown in Figure D2, this will lead to a large performance
+degradation in terms of PRC AUC and Precision@n for most datasets.
+Concretely, Figure D2 shows the difference of performance metrics, i.e.,
+PRC ROC, ROC AUC and Precision@n between scaling max( w(x|bq)) with
+considering the distance to τ q
+100 or τ q
+0 , and not scaling max( w(x|bq)). For all
+datasets, the differences are positive. Particularly, these differences are signifi-
+cantly large in terms of PRC AUC and Precision@n for most datasets such as
+Energy, Hepatitis, Indian Liver Patient, Synthetic 5 and Synthetic 10. There-
+fore, it is pivotal to define the matched interval length by considering the
+distance from bq to τ q
+100 or τ q
+0 when bq > τq
+100 or bq < τq
+0 , respectively.
+D.2 Clipping Conditional Quantile Interval Length
+To mitigate dictator effect, we have proposed to clip large matched conditional
+quantile interval lengths with an upper bound, which is set to η
+100 . More con-
+cretely, we set η = 10. To demonstrate the efficacy of this strategy on various
+datasets, we compute the performance metrics of QCAD by varying the hyper-
+parameter η ∈ {0.1, 0.2, 0.5, 1, 2, 3, ...,11, 12, 15, 20, 30, 40, N one}, where None
+means no clipping is performed.

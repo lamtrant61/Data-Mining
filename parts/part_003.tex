@@ -1,0 +1,75 @@
+\section{Phát hiện và giải thích sự bất thường theo ngữ cảnh}
+\label{sec:framework}
+
+Trước tiên, chúng tôi giới thiệu các thuật ngữ và ký hiệu cần thiết, đồng thời minh họa điều này bằng ví dụ chạy được mô tả trong Bảng~\ref{tab:ExampleData}. Tập dữ liệu $\mathbf{X} =\{\mathbf{x}_{1},\ldots,\mathbf{x}_{i},\ldots,\mathbf{x}_{N}\}$ chứa các phiên bản $N$ (hoặc điểm dữ liệu) trên tập hợp các tính năng (còn gọi là thuộc tính hoặc biến) được biểu thị bằng $\mathbf{F} = \{\mathbf{f}^{1},\ldots,\mathbf{f}^{j},\ldots,\mathbf{f}^{D}\}$. $x_{i}^{j}$ biểu thị giá trị của đối tượng thứ $i$, $\mathbf{x}_{i}$, cho tính năng thứ $j$, $\mathbf{f}^{j}$. Trong ví dụ đang chạy, chúng ta có $N=16$, $D=6$, $\mathbf{F}= \{Latitude, Longitude, Season, Temperature, Rain, Wind\}$ và $x_{1}^{Rain} = 69$.
+
+\begin{table}[!htbp]
+\caption{Ví dụ đang chạy: dữ liệu khí hậu hư cấu cho các thành phố của Hà Lan. Nhiệt độ được đo bằng độ C, mưa tính bằng mm và gió tính bằng dặm một giờ. Thành phố không được sử dụng để phát hiện sự bất thường. \emph{Latitude}, \emph{Kinh độ} và \emph{Mùa} được coi là các đặc trưng ngữ cảnh, trong khi \textbf{Nhiệt độ}, \textbf{Mưa} và \textbf{Gió} được coi là hành vi tính năng.}\label{tab:ExampleData}
+\begin{center}
+\begin{tabular}{cccccccc}
+\toprule
+Thành phố & \emph{Vĩ độ} & \emph{Kinh độ} & \emph{Mùa} & \textbf{Nhiệt độ} & \textbf{Mưa} & \textbf{Gió}\\
+\midrule
+Leiden & 52.16 & 4.49 & Mùa đông & 3.0 & 69 & 16\\
+Amsterdam & 52.37 & 4.89 & Mùa đông & 2.9 & 55 & 17\\
+Rotterdam & 51.92 & 4.46 & Mùa đông & 2.7 & 60 & 15\\
+Oss & 51.45 & 5.31 & Mùa đông & 1.1 & 58 & 25\\
+Eindhoven & 51.44 & 5.46 & Mùa Thu & 16.6 & 62 & 25\\
+Delft & 52.00 & 4.21 & Mùa Thu & 16.1 & 45 & 19\\
+Utrecht & 52.09 & 5.10 & Mùa Thu & 18.3 & 42 & 20\\
+The Hague & 52.07 & 4.28 & Mùa Thu & 18.5 & 49 & 18\\
+Tilburg & 51.33 & 5.52 & Mùa hè & 22.1 & 39 & 22\\
+Middelburg & 51.49 & 3.61 & Mùa hè & 20.3 & 41 & 23\\
+Arnhem & 51.98 & 5.89 & Mùa hè & 19.6 & 48 & 17\\
+Venlo & 51.37 & 6.17 & Mùa hè & 21.8 & 43 & 35\\
+Emmen & 52.46 & 6.55 & Mùa Xuân & 8.3 & 80 & 10\\
+Meppel & 52.69 & 6.19 & Mùa Xuân & 7.1 & 27 & 13\\
+Groningen & 53.13 & 6.34 & Mùa xuân & 4.2 & 17 & 19\\
+Leeuwarden & 53.10 & 5.80 & Mùa Xuân & 7.2 & 17 & 19\\
+\botrule
+\end{tabular}
+\end{center}
+\end{table}Chúng tôi giả định rằng bộ tính năng $\mathbf{F}$ được chia thành hai bộ tính năng riêng biệt (thường sử dụng kiến ​​thức về miền): bộ đặc trưng ngữ cảnh $\mathbf{C} =\{\mathbf{c}^{1},...,\mathbf{c}^{p},\ldots,\mathbf{c}^{P}\}$ và bộ đặc trưng hành vi $\mathbf{B} =\{\mathbf{b}^{1},\ldots,\mathbf{b}^{q},\ldots,\mathbf{b}^{Q}\}$, chẳng hạn như $D=P+Q$, $\mathbf{F} = \mathbf{C} \cup \mathbf{B}$ và $\mathbf{C} \cap \mathbf{B} = \emptyset$. Không mất tính tổng quát, ta có thể sắp xếp lại đặc điểm của đối tượng
+$\mathbf{x}_{i}=(x_{i}^{1},...,x_{i}^{j},...,x_{i}^{D})$ và biểu thị nó dưới dạng $\mathbf{x}_{i}=(x_{i}^{1},...,x_{i}^{P},x_{i}^{P+1},...,x_{i}^{P+Q}) = (c_{i}^{1},...,c_{i}^{p},...,c_{i}^{P},b_{i}^{1},...,b_{i}^{q},...,b_{i}^{Q})=(\mathbf{c}_{i}, \mathbf{b}_{i}) $, do đó $\mathbf{c}_{i}$ và $\mathbf{b}_{i}$ lần lượt biểu thị các giá trị đặc trưng ngữ cảnh và hành vi của nó. Theo đó, chúng tôi gọi không gian được kéo dài bởi $\mathbf{C}$ là \textit{không gian ngữ cảnh}, tức là $\mathcal{C} = \mathbf{c}^{1}\times... \times\mathbf{c}^{p}\times...\times\mathbf{c}^{P}$ và không gian được kéo dài bởi $\mathbf{B}$ là \textit{không gian hành vi}, tức là $\mathcal{B} = \mathbf{b}^{1}\times...\times \mathbf{b}^{q}\times...\times\mathbf{b}^{Q}$.
+
+Cuối cùng, đặt $\Pow$ biểu thị tập lũy thừa, tức là $\Pow(\mathbf{X}) = \{X \subseteq \mathbf{X}\}$.
+
+\subsection{Báo cáo vấn đề}
+
+Khi phát hiện sự bất thường theo ngữ cảnh, các đặc trưng ngữ cảnh được sử dụng để xác định cái gọi là \emph{bối cảnh} của một đối tượng. Bối cảnh của một đối tượng được sử dụng để ước tính liệu nó có bất thường hay không. Điều thứ hai đạt được bằng cách so sánh các giá trị của đối tượng về các đặc trưng hành vi với những gì là `bình thường' trong ngữ cảnh của đối tượng --- nếu các giá trị hành vi của đối tượng sai lệch mạnh, nó sẽ bị gắn cờ là bất thường.
+
+Để phát hiện sự bất thường theo ngữ cảnh có ý nghĩa, chúng ta phải giả định rằng \emph {tồn tại sự phụ thuộc giữa dữ liệu theo ngữ cảnh và hành vi}. Nếu mối quan hệ như vậy không tồn tại thì không cần sử dụng tính năng phát hiện sự bất thường theo ngữ cảnh; người ta có thể chỉ cần loại bỏ các đặc trưng ngữ cảnh và giảm vấn đề thành vấn đề phát hiện sự bất thường truyền thống.
+
+Chúng tôi minh họa điều này bằng ví dụ đang chạy trong Bảng~\ref{tab:ExampleData}. Chúng tôi có thể phát hiện thời tiết bất thường có tính đến các khu vực và mùa khác nhau bằng cách chỉ định bộ đặc trưng ngữ cảnh $\mathbf{C} = \{Latitude, Longitude, Season\}$ và bộ đặc trưng hành vi $\mathbf{B} = \{Temperature, Rain, Wind\}$. Mỗi thành phố hiện chỉ được so sánh với các thành phố có cùng vĩ độ, kinh độ và mùa, tức là bối cảnh của nó. Nếu một thành phố có các giá trị về nhiệt độ, mưa và/hoặc gió khác xa nhiều so với các giá trị của thành phố trong bối cảnh của nó thì thành phố đó được đánh dấu là bất thường.
+
+Ví dụ, Amsterdam và Rotterdam có thể tạo thành bối cảnh của Leiden; cả hai đều ở gần và chúng tôi có số đo cho cùng một mùa. Nhiệt độ và gió ở cả ba thành phố đều giống nhau, nhưng ở Leiden về cơ bản có lượng mưa nhiều hơn ở Amsterdam và Rotterdam. Do đó, vì lý do đó Leiden có thể bị coi là một kẻ dị thường.Để chính thức hóa vấn đề, chúng tôi giới thiệu một `hàm ngữ cảnh' chung để ánh xạ từng điểm dữ liệu có thể có vào một tập hợp con của tập dữ liệu, tức là ngữ cảnh của nó, dựa trên các đặc điểm ngữ cảnh của điểm dữ liệu.
+
+\textbf{Vấn đề 1: Phát hiện bất thường theo ngữ cảnh} Cho một tập dữ liệu $\mathbf{X}$ với bộ tính năng $\mathbf{F} = (\mathbf{C},\mathbf{B})$, hàm ngữ cảnh $\context : \mathcal{C} \rightarrow \Pow(\mathbf{X})$, trình phát hiện bất thường $\anomaly : \mathcal{B} \times \Pow(\mathbf{X}) \rightarrow \mathbb{R}^{+}$ và ngưỡng $\phi$, tìm tất cả các điểm dữ liệu cho điểm bất thường vượt quá $\phi$ và do đó được gắn cờ là bất thường---dựa trên các đặc trưng hành vi---trong bối cảnh riêng của chúng, tức là $\{(\mathbf{c},\mathbf{b}) \in \mathbf{X} \mid \anomaly(\mathbf{b}, \context(\mathbf{c})) \geq \phi \}$.
+
+Lưu ý rằng bối cảnh chỉ được xác định dựa trên các giá trị đặc trưng ngữ cảnh và trình phát hiện bất thường chỉ có thể sử dụng các giá trị đặc trưng hành vi của các điểm dữ liệu trong ngữ cảnh nhất định khi xác minh xem điểm dữ liệu đã cho có bất thường hay không.
+
+Trong thực tế, các nhà phân tích không chỉ quan tâm đến việc xác định các điểm bất thường mà còn cần biết lý do cơ bản tại sao một đối tượng cụ thể được báo cáo là bất thường. Điều này dẫn đến vấn đề thứ hai mà chúng tôi xem xét.
+
+\textbf{Vấn đề 2: Giải thích bất thường theo ngữ cảnh} Cho một đối tượng dị thường $\mathbf{x} \in \mathbf{X}$ và hàm ngữ cảnh $\context$ và trình phát hiện bất thường $\anomaly$ đã được sử dụng để phát hiện nó, hãy tìm các đặc trưng hành vi $\mathbf{B'} \subseteq \mathbf{B}$ để ứng phó $\mathbf{x} = (\mathbf{c}, \mathbf{b})$ khác biệt đáng kể so với $\context(\mathbf{c})$.
+
+\subsection{Phương pháp tiếp cận tổng thể} \label{subsec:framework}
+
+Báo cáo vấn đề trong phần trước gợi ý cách tiếp cận ba hướng dựa trên việc tạo bối cảnh 1), phát hiện bất thường 2) và giải thích bất thường 3). Trong tiểu mục này, chúng tôi giải thích và minh họa cách tiếp cận tổng thể mà chúng tôi đề xuất, sử dụng ví dụ đang chạy từ Bảng~\ref{tab:ExampleData}.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=12cm]{images/Pic_framework.pdf}
+\caption{ Giải thích về sự bất thường và tạo nhóm tham chiếu. Giai đoạn Tạo nhóm tham chiếu tính toán ma trận khoảng cách chỉ sử dụng các đặc trưng ngữ cảnh và tìm nhóm tham chiếu cho từng đối tượng trên cơ sở này.  Giai đoạn Giải thích sự bất thường tạo ra lời giải thích cho từng điểm bất thường được xác định bằng cách báo cáo các điểm bất thường lân cận theo ngữ cảnh, điểm bất thường cuối cùng và điểm bất thường thô trong từng đặc trưng hành vi.}\label{fig:framework}
+\end{figure}
+
+\paragraph{Giai đoạn 1: Tạo nhóm tham chiếu} Có thể có nhiều lựa chọn cho hàm ngữ cảnh; trong bản thảo này, chúng tôi chọn sử dụng hàng xóm gần nhất $k$ của một đối tượng mà chúng tôi gọi là \emph{nhóm tham chiếu}. Lý do quan trọng nhất cho sự lựa chọn này là 1) khi ma trận khoảng cách theo ngữ cảnh toàn cầu đã được tính toán, các lân cận gần nhất của bất kỳ đối tượng nào có thể được tìm thấy tương đối nhanh chóng; 2) phương pháp này chỉ yêu cầu chọn số liệu khoảng cách, số liệu này có thể được xác định cho bất kỳ loại dữ liệu nào và được điều chỉnh cho phù hợp với vấn đề hiện tại; và 3) nó đủ chung để cho phép sử dụng các bối cảnh kết quả khác nhau.Cho một tập dữ liệu $\mathbf{X}$ với bộ đặc trưng ngữ cảnh $\mathbf{C}$, trước tiên chúng tôi tính toán ma trận khoảng cách $\mathbf{M}$ giữa tất cả các đối tượng chỉ sử dụng các đặc trưng ngữ cảnh. Thứ hai, đối với bất kỳ đối tượng $\mathbf{x} \in \mathbf{X}$ nào, chúng tôi tìm thấy $k$ lân cận gần nhất của nó trong \textit{không gian ngữ cảnh} dựa trên $\mathbf{M}$. Kết quả là, $k$ lân cận gần nhất của $\mathbf{x}$ tạo thành một nhóm tham chiếu, được ký hiệu là $R(\mathbf{x},k)$, đóng vai trò là bối cảnh trong các Sự cố 1 và 2.
+
+Ví dụ, như trong Hình \ref{fig:framework} (a), cho $\{Latitude, Longitude, Season\}$ làm tập đặc điểm ngữ cảnh, trước tiên chúng ta tính toán ma trận khoảng cách trong không gian ngữ cảnh $Latitude \times Longitude \times Season$. Thứ hai, dựa trên ma trận khoảng cách, chúng ta có thể tìm thấy ba lân cận gần nhất của bất kỳ đối tượng nào làm nhóm tham chiếu\footnote{Chúng tôi sử dụng $k=3$ cho mục đích minh họa; trong thực tế, chúng tôi sẽ có một tập dữ liệu có nhiều hơn các bản ghi 16 và $k$ cũng sẽ lớn hơn nhiều.}. Cụ thể, ba láng giềng gần nhất của $\mathbf{x}_{1}$ là $\{\mathbf{x}_{2},\mathbf{x}_{3},  \mathbf{x}_{4}\}$, tạo thành một nhóm tham chiếu cho $\mathbf{x}_{1}$, ký hiệu là $R(\mathbf{x}_{1},3)$.
+
+\paragraph{Phase 2: Phát hiện bất thường} Với một đối tượng $\mathbf{x} \in \mathbf{X}$ với nhóm tham chiếu $R(\mathbf{x},k)$, chúng tôi áp dụng trình phát hiện bất thường $\anomaly$ để đạt được điểm bất thường \emph{chỉ dựa trên các giá trị thuộc tính hành vi}. Chúng tôi lặp lại quy trình trên cho tất cả các đối tượng, dẫn đến điểm bất thường của $N$ là $S= \{s_{1},s_{2},...,s_{N}\}$. Chúng tôi sắp xếp $S$ và sử dụng ngưỡng $\phi$ để có được danh sách xếp hạng các điểm bất thường theo ngữ cảnh $A= \{\mathbf{a}_{1},...,\mathbf{a}_{m},...,\mathbf{a}_{M}\}$, với $M \ll N$.
+
+Ví dụ: chúng ta có thể áp dụng trình phát hiện bất thường trên \textit{không gian hành vi} $Temperature \times Rain \times Wind$ của $\mathbf{x}_{1}$ và nhóm tham chiếu $R(\mathbf{x}_{1},3)=\{\mathbf{x}_{2},\mathbf{x}_{3},\mathbf{x}_{4}\}$ của nó. Kết quả là chúng tôi thu được điểm bất thường $s_{1}$ cho $\mathbf{x}_{1}$. Theo đó, việc lặp lại quá trình này sẽ dẫn đến một tập hợp điểm bất thường $S= \{s_{1},...,s_{16}\}$. Trong ví dụ đang chạy, chúng tôi thấy $\{\mathbf{x}_{4},\mathbf{x}_{12},\mathbf{x}_{13}\}$ là các điểm bất thường theo ngữ cảnh, vì chúng hoạt động khác nhau trong không gian hành vi $Temperature \times Rain \times Wind$ khi so sánh với các lân cận tương ứng của chúng được xác định trong không gian ngữ cảnh $Latitude \times Longitude \times Season$. Ví dụ, Oss ($\mathbf{x}_{4}$) có gió tương đối mạnh hơn vào mùa đông khi so sánh với các thành phố gần nhất là Leiden, Amsterdam và Rotterdam.
+
+Chúng tôi yêu cầu trình phát hiện bất thường phải là \textit{có thể phân bổ}, nghĩa là điểm bất thường $s$ do trình phát hiện bất thường tạo ra phải có thể phân tách thành các đóng góp riêng lẻ đối với tính bất thường cho từng đặc trưng hành vi bằng cách sử dụng cấu trúc gốc của trình phát hiện bất thường.\paragraph{Giai đoạn 3: Giải thích bất thường} Đối với mỗi đối tượng dị thường $\mathbf{a}_{m}$, trước tiên chúng tôi báo cáo nhóm tham chiếu $R(\mathbf{a}_{m},k)$ của nó bằng cách sử dụng ma trận khoảng cách thu được trong Giai đoạn $1$. Thứ hai, chúng tôi báo cáo điểm bất thường $s_{m}$ của nó, như thu được trong Giai đoạn $2$. Hơn nữa, chúng tôi phân tách $s_{m}$ thành các đóng góp riêng lẻ từ mỗi đặc trưng hành vi $\mathbf{b}^{q} \in \mathbf{B}$, dẫn đến danh sách các điểm bất thường thô $\mathbf{s}_{m}=\{s_{m1},...,s_{mq},...,s_{mQ}\}$. Điều này có thể thực hiện được vì $s_{m}$ là \emph{thuộc tính}. Tiếp theo, chúng tôi báo cáo điểm bất thường thô $h$ hàng đầu trong $\mathbf{s}_{m}$ với các đặc trưng hành vi tương ứng của chúng, trong đó nhà phân tích có thể chỉ định $h$. Các đặc trưng hành vi và điểm thô hàng đầu của $h$ cho phép các nhà phân tích hiểu rõ hơn lý do tại sao một đối tượng cụ thể được gắn cờ là bất thường theo ngữ cảnh.
+
+Ví dụ: Hình \ref{fig:framework} (b) báo cáo đối tượng $\mathbf{x}_{12}$ là một điểm bất thường. Để giải thích lý do, trước tiên chúng tôi kiểm tra nhóm tham chiếu $R(\mathbf{x}_{12},3)=\{\mathbf{x}_{10},\mathbf{x}_{11},\mathbf{x}_{12}\}$ của nó, nhóm này chứa ba đối tượng giống với $\mathbf{x}_{12}$ nhất. Thứ hai, chúng tôi báo cáo điểm bất thường của nó, tức là $90$. Tiếp theo, chúng tôi phân tách điểm số và báo cáo các đặc trưng hành vi có độ lệch cao nhất, ví dụ: $Wind$. Chúng ta có thể hiểu kết quả là: $\mathbf{x}_{12}$ sai lệch đáng kể trong $Wind$ khi so sánh với $\{\mathbf{x}_{10},\mathbf{x}_{11},\mathbf{x}_{12}\}$, tất cả đều giống nhau về $Latitude$, $Longitude$ và $Season$.

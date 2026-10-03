@@ -1,0 +1,49 @@
+Springer Nature 2021 LATEX template
+Explainable Contextual Anomaly Detection 23
+T able 3Summary of real-world datasets. # N um,#Cat, #C and #B represent the
+number of numerical features, the number of categorical/nominal features, the number of
+contextual features, and the number of behavioral features, respectively. All behavioral
+features are numerical, the contextual features can be mixed.
+Dataset #Num #Cat #Samples #Anomalies (Ratio) # C #B
+Abalone 8 1 4177 100 (2.4%) 4 5
+AirFoil 6 0 1503 70 (4.7%) 5 1
+BodyFat 15 0 252 20 (7.9%) 13 2
+Boston 12 2 506 40 (7.9%) 13 1
+Concrete 9 0 1030 50 (4.8%) 8 1
+ElNino 3 8 20000 200 (1%) 6 5
+Energy 10 0 768 50 (6.5%) 8 2
+FishWeight 6 1 157 15 (9.5%) 6 1
+ForestFires 11 2 517 50 (9.7%) 4 9
+GasEmission 11 0 7384 100 (1.4%) 8 3
+HeartFailure 7 5 299 30 (10%) 6 6
+Hepatitis 11 2 615 30 (4.9%) 3 10
+LiverPatient 9 2 579 30 (5.2%) 3 8
+Maintenance 18 0 11934 100 (0.8%) 15 3
+Parkinson 21 1 5875 100 (1.7%) 20 2
+PowerPlant 5 0 9568 100 (1%) 4 1
+QSRanking 12 1 475 40 (8.4%) 7 6
+SynMachine 5 0 557 50 (8.9%) 4 1
+Toxicity 7 0 908 50 (5.5%) 6 1
+Yacht 7 0 308 30 (9.7%) 6 1
+• Local Prediction Approach to Anomaly Detection (LoPAD) by Lu et al
+(2020b), which is the state-of-the-art dependency-based traditional anomaly
+detector;
+• Conditional Outlier Detection (CAD) by Song et al (2007), which was the
+first anomaly detector dedicated to identify contextual anomalies;
+• Robust Contextual Outlier Detection (ROCOD) by Liang and
+Parthasarathy (2016), which is the state-of-the-art contextual anomaly
+detector;
+• Isolation Forest (IForest) by Liu et al (2008), which is one of the state-of-
+the-art isolation-based traditional anomaly detectors;
+• Local Outlier Factor (LOF) by Breunig et al (2000), which is one of the
+state-of-the-art density-based traditional anomaly detectors;
+• k-NN anomaly detector by Angiulli and Pizzuti (2002), which is one of the
+state-of-the-art distance-based traditional anomaly detectors;
+• Anomaly detector using axis-parallel subspaces (SOD) by Kriegel et al
+(2009), which is one of the state-of-the-art subspace-based traditional
+anomaly detectors; and
+• Histogram-Based Outlier Score (HBOS) by Goldstein and Dengel (2012),
+which is one of the state-of-the-art histogram-based traditional anomaly
+detectors.
+We implemented and ran all algorithms in Python 3 .8 on a computer with
+Apple M1 chip 8-core CPU and 8GB unified memory. For classical algorithms

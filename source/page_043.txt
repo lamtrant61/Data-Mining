@@ -1,0 +1,43 @@
+Springer Nature 2021 LATEX template
+Explainable Contextual Anomaly Detection 43
+Heart Failure
+This dataset contains heart failure clinical records of 299 patients suffering
+from heart failure. It contains 13 clinical features, of which we use age, sex,
+smoking, diabetes, high blood pressure, and anaemia as contextual features,
+and creatinine phosphokinase, ejection fraction, platelets, serum creatinine,
+serum sodium, time as behavioral features. Besides, the death event feature
+is removed and there is no missing value in this dataset. The original dataset
+is released by Ahmad et al (2017) and we download it from the UCI machine
+learning repository. 15
+Hepatitis
+This dataset contains 615 records concerning the laboratory values of blood
+donors and Hepatitis C patients. We use the demographic features such as
+sex and age, and Category of donors as contextual features, and the rest of
+features, i.e., ALB, ALP, ALT, AST, BIL, CHE, CHOL, CREA, GGT and
+PROT as behavioral features. The original dataset is downloaded from the
+UCI machine learning Repository. 16 26 records contain missing values and
+therefore are removed.
+Indian Liver Patient
+This dataset contains the medical records of 583 Indian liver patients,
+4 of which contain missing values and are therefore deleted from
+further analysis. We treat Age, Gender and Selector as contextual
+features, and Total Bilirubin, Direct Bilirubin, Alkaline Phosphotase,
+Alamine Aminotransferase, Aspartate Aminotransferase, Total Protiens,
+Albumin, Albumin and Globulin Ratio as behavioral features. This dataset is
+downloaded from the UCI machine learning repository. 17
+Maintenance of Naval Propulsion Plants
+The data set contains 11934 experimental records, which were performed by a
+numerical simulator of a naval vessel featuring a gas turbine propulsion plant.
+We use the features describing the gas turbine measures of the physical asset as
+contextual features, including LeverPosition, GTT, GTn, GGn, Ts, Tp, T48,
+T1, T2, P48, P1, P2, Pexh, TIC, mf. Meanwhile, we use the features containing
+the ship speed and the performance decay over time of gas turbine components,
+e.g., ShipSpeed, CompressorDecay and TurbineDecay, as behavioral features.
+This dataset is downloaded from UCI, 18 containing no missing values.
+Parkinsons Telemonitoring
+The data set contains 5875 records of a series of biomedical voice measurements
+from 42 early-stage Parkinson’s disease patients. There people were recruited
+15archive.ics.uci.edu/ml/datasets/Heart+failure+clinical+records
+16https://archive.ics.uci.edu/ml/datasets/HCV+data
+17https://archive.ics.uci.edu/ml/datasets/ILPD+(Indian+Liver+Patient+Dataset)
+18https://archive.ics.uci.edu/ml/datasets/Condition+Based+Maintenance+of+Naval+Propulsion+Plants

@@ -1,0 +1,43 @@
+Springer Nature 2021 LATEX template
+Explainable Contextual Anomaly Detection 41
+Airfoil Self-Noise
+This dataset contains 1503 records from a series of aerodynamic and acoustic
+tests of airfoil blade sections. Specifically, we use the features describing the
+frequency, the angle of attack, the chord length, the free-stream velocity and
+the suction side displacement thickness (e.g., f, alpha, c, U infinity and delta)
+as contextual features. Meanwhile, the feature describing the scaled sound
+pressure level (e.g., SSPL) as behavioral feature. This dataset is downloaded
+from UCI, 6 containing no missing values.
+Bodyfat
+This dataset contains the estimates of body density and the percentage of body
+fat (used as behavioral features), which are determined by various body cir-
+cumference measurements, such as, Age, Weight, Height, Neck circumference,
+Chest circumference, Abdomen 2 circumference, Hip circumference, Thigh
+circumference, Knee circumference, Ankle circumference, Biceps (extended)
+circumference, Forearm circumference, and Wrist circumference (used as con-
+textual features) for 252 men. The raw dataset includes no categorical features
+and 0 missing values, downloaded from the CMU statlib. 7
+Boston House Price
+This dataset contains 583 records of the Boston house price. We use the fea-
+tures describing the properties of the house and its surroundings, i.e., CRIM,
+ZN, INDUS, CHAS, NOX, RM, AGE, DIS, RAD, TAX, PTRATIO, B, LSTAT
+as contextual features, and the median value of owner-occupied homes, i.e.,
+MED, as behavioral feature. This dataset is released by Harrison Jr and Rubin-
+feld (1978) and downloaded from the CMU statlib 8. It remains 506 records
+after dropping rows containing missing values.
+Concrete Compressive Strength
+This dataset contains 1030 records about the compressive strength of concrete.
+We use the features describing the age and different ingredients as contextual
+features, including C1, C2, C3, C4, C5, C6, C7 and Age. In addition, we use
+the feature Strength as behavioral feature. This dataset is downloaded from
+UCI, 9 containing no missing values.
+El Nino
+This dataset contains 178080 records of the oceanographic and surface mete-
+orological readings, which are taken from buoys located throughout the
+equatorial Pacific. We use the temporal and spatial features, i.e., Year, Month,
+Day, Date, Latitude, Longitude as contextual features, and other features, i.e.,
+Zonal Winds, Meridional Winds, Humidity, Air Temp, Sea Surface Temp as
+6https://archive.ics.uci.edu/ml/datasets/Airfoil+Self-Noise
+7http://lib.stat.cmu.edu/datasets/bodyfat
+8http://lib.stat.cmu.edu/datasets
+9https://archive.ics.uci.edu/ml/datasets/Concrete+Compressive+Strength

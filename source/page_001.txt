@@ -1,0 +1,28 @@
+Springer Nature 2021 LATEX template
+Explainable Contextual Anomaly Detection
+using Quantile Regression Forests∗
+Zhong Li and Matthijs van Leeuwen
+Leiden Institute of Advanced Computer Science (LIACS), Leiden
+University, the Netherlands.
+*Corresponding author(s). E-mail(s): z.li@liacs.leidenuniv.nl;
+Contributing authors: m.van.leeuwen@liacs.leidenuniv.nl;
+Abstract
+Traditional anomaly detection methods aim to identify objects that devi-
+ate from most other objects by treating all features equally. In contrast,
+contextual anomaly detection methods aim to detect objects that devi-
+ate from other objects within acontext of similar objects by dividing the
+features into contextual features and behavioral features. In this paper,
+we develop connections between dependency-based traditional anomaly
+detection methods and contextual anomaly detection methods. Based
+on resulting insights, we propose a novel approach to inherently inter-
+pretable contextual anomaly detection that uses Quantile Regression
+Forests to model dependencies between features. Extensive experiments
+on various synthetic and real-world datasets demonstrate that our
+method outperforms state-of-the-art anomaly detection methods in iden-
+tifying contextual anomalies in terms of accuracy and interpretability.
+Keywords: Anomaly detection, Anomaly explanation, Outlier detection,
+Contextual anomaly detection, Quantile regression forests
+∗Manuscript accepted byData Mining and Knowledge Discoveryjournal for publi-
+cation (June 2023). This is a preprint version.
+1
+arXiv:2302.11239v3  [cs.LG]  4 Aug 2023

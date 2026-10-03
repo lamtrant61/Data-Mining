@@ -1,0 +1,36 @@
+Springer Nature 2021 LATEX template
+38 Explainable Contextual Anomaly Detection
+Lu S, Liu L, Li J, et al (2020a) Dependency-based anomaly detection:
+Framework, methods and benchmark. arXiv preprint arXiv:201106716
+Lu S, Liu L, Li J, et al (2020b) Lopad: A local prediction approach to anomaly
+detection. Advances in Knowledge Discovery and Data Mining 12085:660
+Lundberg SM, Lee SI (2017) A unified approach to interpreting model
+predictions. Advances in neural information processing systems 30
+Meghanath M, Pai D, Akoglu L (2018) Conout: Con textual outlier detection
+with multiple contexts: Application to ad fraud. In: Joint European Confer-
+ence on Machine Learning and Knowledge Discovery in Databases, Springer,
+pp 139–156
+Meinshausen N (2006) Quantile regression forests. Journal of Machine Learn-
+ing Research 7(6):983–999
+Micenkov´ a B, McWilliams B, Assent I (2014) Learning outlier ensembles: The
+best of both worlds–supervised and unsupervised. In: Proceedings of the
+ACM SIGKDD 2014 Workshop on Outlier Detection and Description under
+Data Diversity (ODD2). New York, NY, USA, Citeseer, pp 51–54
+Micenkov´ a B, McWilliams B, Assent I (2015) Learning representations for
+outlier detection on a budget. arXiv preprint arXiv:150708104
+Nemenyi PB (1963) Distribution-free multiple comparisons. Princeton Univer-
+sity
+Nguyen HV, M¨ uller E, Vreeken J, et al (2013) Cmi: An information-theoretic
+contrast measure for enhancing subspace cluster and outlier detection. In:
+Proceedings of the 2013 SIAM International Conference on Data Mining,
+SIAM, pp 198–206
+Noto K, Brodley C, Slonim D (2010) Anomaly detection using an ensemble of
+feature models. In: 2010 ieee international conference on data mining, IEEE,
+pp 953–958
+Pang G, Shen C, Cao L, et al (2021) Deep learning for anomaly detection: A
+review. ACM Computing Surveys (CSUR) 54(2):1–38
+Panjei E, Gruenwald L, Leal E, et al (2022) A survey on outlier explanations.
+The VLDB Journal 31(5):977–1008
+Pasillas-D ´ ıaz JR, Ratt´ e S (2016) An unsupervised approach for combin-
+ing scores of outlier detection techniques, based on similarity measures.
+Electronic notes in theoretical computer science 329:61–77
